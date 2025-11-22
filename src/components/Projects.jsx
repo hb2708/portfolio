@@ -27,7 +27,7 @@ const Projects = () => {
                             transition={{ delay: index * 0.1 }}
                             className="group bg-surface rounded-xl overflow-hidden border border-white/5 hover:border-primary/20 transition-all duration-300 hover:-translate-y-1"
                         >
-                            <div className="relative h-48 overflow-hidden">
+                            <div className="relative h-80 overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10" />
                                 <img
                                     src={project.image}

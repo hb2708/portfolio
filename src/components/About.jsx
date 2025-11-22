@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { SKILLS } from "../constants";
+import profileImage from "../assets/harshal.webp";
 
 const About = () => {
     return (
@@ -11,10 +12,22 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="mb-16"
+                    className="mb-16 flex flex-col md:flex-row items-center gap-12"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">About Me</h2>
-                    <div className="prose prose-invert max-w-3xl text-muted text-lg leading-relaxed">
+                    <div className="w-full md:w-1/3">
+                        <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-white/10 group">
+                            <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 z-10" />
+                            {/* Replace src with your actual photo path */}
+                            <img
+                                src={profileImage}
+                                alt="Harshal Bhavsar"
+                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="w-full md:w-2/3 prose prose-invert max-w-none text-muted text-lg leading-relaxed">
+                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">About Me</h2>
                         <p className="mb-4">
                             I am a <strong>Staff Engineer</strong> and <strong>Mobile Specialist</strong> with over 10 years of experience in building high-impact mobile applications.
                             Currently, I lead mobile engineering teams at <strong>MoneyLion Malaysia</strong>, where I helped launch and scale the Marketplace vertical to generate over <strong>$1 million in weekly revenue</strong>.

@@ -7,8 +7,31 @@ const Hero = () => {
     return (
         <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
             {/* Background Glow */}
-            <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] pointer-events-none" />
+            <motion.div
+                animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+                className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"
+            />
+            <motion.div
+                animate={{
+                    scale: [1, 1.1, 1],
+                    opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                }}
+                className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] pointer-events-none"
+            />
 
             <div className="max-w-4xl w-full z-10">
                 <motion.div
@@ -44,13 +67,15 @@ const Hero = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <a
+                        <motion.a
                             href="#projects"
-                            className="group flex items-center justify-center gap-2 px-8 py-4 bg-primary/10 text-primary border border-primary/20 rounded-lg hover:bg-primary/20 transition-all duration-300 font-medium"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="group flex items-center justify-center gap-2 px-8 py-4 bg-primary text-background border border-primary rounded-lg hover:bg-primary/90 transition-all duration-300 font-bold text-lg shadow-lg shadow-primary/25"
                         >
                             Check out my work
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </motion.a>
                         <a
                             href="/resume.pdf"
                             target="_blank"
