@@ -1,16 +1,104 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My professional portfolio showcasing my work as a Staff Engineer and React Native Developer.
 
-Currently, two official plugins are available:
+🌐 **Live Site:** [gyaan.tech](https://gyaan.tech)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## React Compiler
+- **Framework:** React 19 + Vite
+- **Styling:** TailwindCSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Deployment:** Vercel
+- **Package Manager:** pnpm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🎨 Modern dark theme with amber accents
+- 📱 Fully responsive design (mobile, tablet, desktop)
+- ⚡ Smooth scroll navigation
+- ⌨️ Typewriter animation effect
+- 🎯 Clean component architecture
+- 🔒 HTTPS enabled with automatic SSL
+- 🚀 Optimized performance
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Local Development
+
+### Prerequisites
+- Node.js 18+ 
+- pnpm (or npm/yarn)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/hb2708/portfolio.git
+cd portfolio
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm run dev
+```
+
+Visit `http://localhost:5173` to view the site locally.
+
+### Build for Production
+
+```bash
+pnpm run build
+```
+
+The optimized build will be in the `dist/` folder.
+
+## 📂 Project Structure
+
+```
+portfolio/
+├── src/
+│   ├── components/      # React components
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Writing.jsx
+│   │   └── Contact.jsx
+│   ├── constants/       # Centralized data
+│   │   └── index.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── public/
+│   └── resume.pdf
+└── tailwind.config.js
+```
+
+## 🎨 Color Palette
+
+- **Background:** `#0f172a` (Slate 900)
+- **Surface:** `#1e293b` (Slate 800)
+- **Primary:** `#f59e0b` (Amber 500)
+- **Secondary:** `#10b981` (Emerald 500)
+- **Text:** `#f8fafc` (Slate 50)
+
+## 📝 Content Management
+
+All content (projects, experience, skills, articles) is centralized in `src/constants/index.js` for easy updates.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👤 Author
+
+**Harshal Bhavsar**
+- GitHub: [@hb2708](https://github.com/hb2708)
+- LinkedIn: [harshal-ios-swift-react-native](https://linkedin.com/in/harshal-ios-swift-react-native)
+- Email: hb2708@gmail.com
+
+---
+
+Built with ❤️ using React and TailwindCSS
