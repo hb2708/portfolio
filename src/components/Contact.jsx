@@ -53,6 +53,16 @@ const Contact = () => {
 
                     <footer className="mt-20 text-sm text-muted/50">
                         <p>© {new Date().getFullYear()} Harshal Bhavsar. Built with React & Tailwind.</p>
+                        <p className="mt-2">
+                            <a
+                                href="https://github.com/hb2708/portfolio"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-primary transition-colors inline-flex items-center gap-1"
+                            >
+                                View Source on GitHub
+                            </a>
+                        </p>
                     </footer>
                 </motion.div>
             </div>
