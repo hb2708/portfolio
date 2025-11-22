@@ -53,7 +53,7 @@ const Contact = () => {
 
                     <footer className="mt-20 text-sm text-muted/50">
                         <p>© {new Date().getFullYear()} Harshal Bhavsar. Built with React & Tailwind.</p>
-                        <p className="mt-2">
+                        <p className="mt-2 flex flex-wrap gap-4 justify-center">
                             <a
                                 href="https://github.com/hb2708/portfolio"
                                 target="_blank"
@@ -61,6 +61,15 @@ const Contact = () => {
                                 className="hover:text-primary transition-colors inline-flex items-center gap-1"
                             >
                                 View Source on GitHub
+                            </a>
+                            <span className="text-muted/30">•</span>
+                            <a
+                                href="https://vercel.com/hb2708-7105s-projects/portfolio/speed-insights"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-primary transition-colors inline-flex items-center gap-1"
+                            >
+                                ⚡ Speed Insights
                             </a>
                         </p>
                     </footer>
