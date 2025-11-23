@@ -12,7 +12,7 @@ export const SKILLS = [
     {
         category: "Mobile Architecture",
         icon: Smartphone,
-        items: ["React Native (Expert)", "iOS (Swift/SwiftUI)", "Native Modules & Bridging", "Mobile Performance", "Design Systems"],
+        items: ["React Native", "iOS (Swift/SwiftUI)", "Native Modules & Bridging", "Mobile Performance", "Design Systems"],
     },
     {
         category: "Frontend Ecosystem",
