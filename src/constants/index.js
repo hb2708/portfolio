@@ -10,24 +10,24 @@ export const NAV_LINKS = [
 
 export const SKILLS = [
     {
-        category: "Mobile Development",
+        category: "Mobile Architecture",
         icon: Smartphone,
-        items: ["React Native", "iOS (Swift)", "Objective-C", "Cocoa Touch", "Mobile Design Systems"],
+        items: ["React Native (Expert)", "iOS (Swift/SwiftUI)", "Native Modules & Bridging", "Mobile Performance", "Design Systems"],
     },
     {
-        category: "Core Tech",
+        category: "Frontend Ecosystem",
         icon: Code2,
-        items: ["JavaScript / TypeScript", "React", "Redux / MobX", "HTML5 & CSS3", "TailwindCSS"],
+        items: ["TypeScript / JavaScript", "React.js / Next.js", "State Management (Redux/MobX)", "Modern CSS / Tailwind", "Modular Architecture"],
     },
     {
-        category: "Tools & DevOps",
+        category: "DevOps & Quality",
         icon: Terminal,
-        items: ["Git / GitHub", "Bitrise (CI/CD)", "JIRA", "XCode", "Android Studio"],
+        items: ["CI/CD Pipelines (Bitrise)", "Fastlane Automation", "Testing (Jest/Detox)", "App / Play Store Deployments", "Observability"],
     },
     {
-        category: "Soft Skills",
+        category: "Strategic Leadership",
         icon: Zap,
-        items: ["Technical Leadership", "Mentorship", "Agile Methodologies", "Cross-functional Collaboration"],
+        items: ["Technical Strategy", "Engineering Mentorship", "System Architecture", "Cross-functional Leadership"],
     },
 ];
 
