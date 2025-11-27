@@ -1,27 +1,20 @@
-import Navbar from "./components/Navbar";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Experience from "./components/Experience";
-import Writing from "./components/Writing";
-import Contact from "./components/Contact";
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import ProjectDetails from './components/ProjectDetails';
 
 function App() {
-  return (
-    <main className="bg-background min-h-screen text-text selection:bg-primary/30">
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Writing />
-      <Contact />
-      <Analytics />
-      <SpeedInsights />
-    </main>
-  );
+    return (
+        <div className="min-h-screen bg-background text-text font-sans selection:bg-primary/30">
+            <Navbar />
+            <Routes>
+                <Route index element={<Home />} />
+                <Route path="projects/:id" element={<ProjectDetails />} />
+            </Routes>
+            <Footer />
+        </div>
+    );
 }
 
 export default App;

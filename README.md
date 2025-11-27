@@ -15,7 +15,7 @@ My professional portfolio showcasing my work as a Staff Engineer and React Nativ
 
 ## ✨ Features
 
-- 🎨 Modern dark theme with amber accents
+- 🎨 Modern dark theme with electric blue accents
 - 📱 Fully responsive design (mobile, tablet, desktop)
 - ⚡ Smooth scroll navigation
 - ⌨️ Typewriter animation effect
@@ -63,9 +63,12 @@ portfolio/
 │   │   ├── Hero.jsx
 │   │   ├── About.jsx
 │   │   ├── Projects.jsx
+│   │   ├── ProjectDetails.jsx
+│   │   ├── Skills.jsx
 │   │   ├── Experience.jsx
 │   │   ├── Writing.jsx
-│   │   └── Contact.jsx
+│   │   ├── Awards.jsx
+│   │   └── Footer.jsx
 │   ├── constants/       # Centralized data
 │   │   └── index.js
 │   ├── App.jsx
@@ -78,11 +81,13 @@ portfolio/
 
 ## 🎨 Color Palette
 
-- **Background:** `#0f172a` (Slate 900)
-- **Surface:** `#1e293b` (Slate 800)
-- **Primary:** `#f59e0b` (Amber 500)
-- **Secondary:** `#10b981` (Emerald 500)
-- **Text:** `#f8fafc` (Slate 50)
+- **Background:** `#0F172A` (Deep Slate)
+- **Surface:** `#1E293B` (Slate 800)
+- **Primary:** `#3B82F6` (Electric Blue)
+- **Secondary:** `#10b981` (Emerald)
+- **Accent:** `#61DAFB` (React Cyan)
+- **Text:** `#F8FAFC` (Slate 50)
+- **Muted:** `#94A3B8` (Cool Grey)
 
 ## 📝 Content Management
 

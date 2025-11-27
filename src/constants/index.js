@@ -97,29 +97,90 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
     {
+        id: "moneylion",
         title: "MoneyLion App",
         description: "Leading the mobile engineering team for a financial super app. Architected the Marketplace vertical generating $1M+ weekly revenue.",
-        tech: ["React Native", "iOS", "Design Systems"],
+        longDescription: "As a Staff Engineer at MoneyLion, I lead the mobile engineering efforts for a comprehensive financial super app that serves millions of users. My role involves not just writing code, but defining the technical strategy, mentoring a team of engineers, and ensuring the app's performance and scalability. I played a pivotal role in architecting the Marketplace vertical, a key revenue driver for the company.",
+        challenges: [
+            "Scaling the app to handle 10x traffic during major marketing campaigns.",
+            "Integrating complex third-party financial services while maintaining a seamless user experience.",
+            "Ensuring consistency across iOS and Android platforms with a unified design system."
+        ],
+        solutions: [
+            "Implemented a robust caching strategy and optimized API calls to reduce server load.",
+            "Developed a modular architecture that allows for easy integration and testing of new features.",
+            "Built a custom React Native UI library that is used across all mobile teams."
+        ],
+        features: [
+            "Financial Marketplace",
+            "Instacash Advances",
+            "RoarMoney Banking",
+            "Crypto Trading"
+        ],
+        tech: ["React Native", "iOS", "Design Systems", "Redux", "Node.js"],
         image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop",
         link: "https://moneylion.com",
     },
     {
+        id: "dahmakan-rider",
         title: "Dahmakan Rider App",
         description: "The app helps dahmakan riders to delivery delicious food to the Customers. Features include route optimization, customer chat, and navigation.",
-        tech: ["React Native", "Navigation", "Real-time Chat"],
+        longDescription: "The Dahmakan Rider App was built to empower our delivery fleet. It's a mission-critical tool that riders use to receive orders, navigate to customers, and communicate with support. The app needed to be extremely reliable, battery-efficient, and easy to use under various outdoor conditions.",
+        challenges: [
+            "Real-time location tracking without draining the rider's battery.",
+            "Handling offline scenarios when riders enter areas with poor connectivity.",
+            "Calculating the most efficient delivery routes dynamically."
+        ],
+        solutions: [
+            "Optimized background location updates and implemented batched syncing.",
+            "Built a robust offline-first architecture using local storage and sync queues.",
+            "Integrated Google Maps API for real-time traffic-aware routing."
+        ],
+        features: [
+            "Real-time Order Acceptance",
+            "Turn-by-turn Navigation",
+            "Earnings Dashboard",
+            "In-app Chat Support"
+        ],
+        tech: ["React Native", "Navigation", "Real-time Chat", "Google Maps API", "Firebase"],
         image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1374&auto=format&fit=crop",
         link: "https://play.google.com/store/apps/details?id=com.dahmakan.riderapp&hl=en",
     },
     {
+        id: "dahmakan-ios",
         title: "Dahmakan iOS App",
         description: "In-house food delivery service app. Helps users order food at the tap of a fingertip. Includes live order tracking and rider chat.",
-        tech: ["iOS", "Swift", "Live Tracking"],
+        longDescription: "The Dahmakan Consumer App is the face of our food delivery service. It allows users to browse our daily changing menu, place orders, and track their delivery in real-time. The focus was on creating a delightful, buttery-smooth user experience that encourages repeat orders.",
+        challenges: [
+            "Ensuring 60fps animations and smooth transitions on older iOS devices.",
+            "Managing complex state for cart, orders, and user preferences.",
+            "Implementing a secure and seamless payment flow."
+        ],
+        solutions: [
+            "Heavily optimized table views and image loading using Texture (AsyncDisplayKit).",
+            "Adopted a unidirectional data flow architecture for predictable state management.",
+            "Integrated Stripe and local payment gateways with robust error handling."
+        ],
+        features: [
+            "Daily Menu Rotation",
+            "Live Order Tracking",
+            "Smart Recommendations",
+            "Loyalty Rewards Program"
+        ],
+        tech: ["iOS", "Swift", "Live Tracking", "Core Data", "Stripe"],
         image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1470&auto=format&fit=crop",
         link: "https://apps.apple.com/my/app/dahmakan/id1030383844",
     },
 ];
 
 export const ARTICLES = [
+    {
+        title: "5 Years & Billions in Revenue: Shopify’s Epic React Native Journey",
+        date: "Nov 2024",
+        platform: "LinkedIn",
+        link: "https://www.linkedin.com/pulse/5-years-billions-revenue-shopifys-epic-react-native-journey-bhavsar-z9qnf",
+        description: "A deep dive into how Shopify leveraged React Native to scale their mobile engineering and drive billions in revenue.",
+    },
     {
         title: "Run project on New OS from older Xcode ⌚️ 📱",
         date: "Mar 2018",
