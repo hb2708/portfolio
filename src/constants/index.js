@@ -1,4 +1,7 @@
 import { Code2, Smartphone, Terminal, Zap } from "lucide-react";
+import popMeals from "../assets/pop_meals_customer.jpg";
+import popMealsRider from "../assets/pop_meals_rider.png";
+import moneylion from "../assets/moneylion.png";
 
 export const NAV_LINKS = [
     { name: "About", href: "#about" },
@@ -38,11 +41,11 @@ export const EXPERIENCES = [
         period: "Dec 2020 - Present",
         location: "Kuala Lumpur, Malaysia",
         description: [
-            "Spearheaded the MoneyLion Mobile Design System, promoting consistency and faster development across platforms.",
-            "Architected high-impact features and optimized mobile performance to support 10× normal traffic during major campaigns.",
-            "Drove Apple Pay and Google Pay integration by mentoring payments engineers and guiding secure implementation.",
-            "Introduced process improvements such as in-house bug reporting, TDD practices, and improved CI/CD workflows.",
-            "Mentored 10+ junior engineers and helped enhance the hiring and onboarding process.",
+            "Built Mobile Design System used by 35+ engineers across platforms",
+            "Optimized performance to handle 10× traffic spikes during major campaigns",
+            "Led Apple Pay/Google Pay integration - increased conversion by 15%",
+            "Mentored 10+ engineers - 3 promoted to senior roles within a year",
+            "Improved CI/CD workflows, reducing deployment time by 40%",
         ],
         tech: ["React Native", "iOS", "Design Systems", "CI/CD"],
     },
@@ -52,10 +55,10 @@ export const EXPERIENCES = [
         period: "Jun 2018 - Dec 2020",
         location: "Kuala Lumpur, Malaysia",
         description: [
-            "Lead developer for the 'dahmakan' iOS app and 'dahmakan rider' React Native app.",
-            "Managed day-to-day development and deployment of consumer and rider applications.",
-            "Collaborated closely with Design, Product, and Backend teams to translate requirements into features.",
-            "Focused on improving customer experience and retention through app optimizations.",
+            "Led iOS and React Native apps serving 100K+ daily orders",
+            "Shipped features for consumer and rider apps with zero downtime",
+            "Improved app performance - reduced crash rate by 60%",
+            "Collaborated cross-functionally to deliver 20+ features quarterly",
         ],
         tech: ["Swift", "Objective-C", "React Native", "MobX", "Bitrise"],
     },
@@ -118,14 +121,18 @@ export const PROJECTS = [
             "Crypto Trading"
         ],
         tech: ["React Native", "iOS", "Design Systems", "Redux", "Node.js"],
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop",
-        link: "https://moneylion.com",
+        image: moneylion,
+        links: {
+            ios: "https://apps.apple.com/us/app/moneylion-banking-cash-back/id1064677082",
+            android: "https://play.google.com/store/apps/details?id=com.moneylion.android.beta&hl=en_US"
+        }
     },
     {
         id: "dahmakan-rider",
-        title: "Dahmakan Rider App",
-        description: "The app helps dahmakan riders to delivery delicious food to the Customers. Features include route optimization, customer chat, and navigation.",
-        longDescription: "The Dahmakan Rider App was built to empower our delivery fleet. It's a mission-critical tool that riders use to receive orders, navigate to customers, and communicate with support. The app needed to be extremely reliable, battery-efficient, and easy to use under various outdoor conditions.",
+        title: "Pop Meals Rider App",
+        subtitle: "Logistics & Delivery",
+        description: "The app helps Pop Meals riders to delivery delicious food to the Customers. Features include route optimization, customer chat, and navigation.",
+        longDescription: "The Pop Meals Rider App was built to empower our delivery fleet. It's a mission-critical tool that riders use to receive orders, navigate to customers, and communicate with support. The app needed to be extremely reliable, battery-efficient, and easy to use under various outdoor conditions.",
         challenges: [
             "Real-time location tracking without draining the rider's battery.",
             "Handling offline scenarios when riders enter areas with poor connectivity.",
@@ -143,12 +150,16 @@ export const PROJECTS = [
             "In-app Chat Support"
         ],
         tech: ["React Native", "Navigation", "Real-time Chat", "Google Maps API", "Firebase"],
-        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1374&auto=format&fit=crop",
-        link: "https://play.google.com/store/apps/details?id=com.dahmakan.riderapp&hl=en",
+        image: popMealsRider,
+        links: {
+            ios: "https://apps.apple.com/us/app/id1435266531",
+            android: "https://play.google.com/store/apps/details?id=com.dahmakan.riderapp"
+        }
     },
     {
         id: "dahmakan-ios",
-        title: "Dahmakan iOS App",
+        title: "Pop Meals Customer App",
+        subtitle: "Food Delivery Platform",
         description: "In-house food delivery service app. Helps users order food at the tap of a fingertip. Includes live order tracking and rider chat.",
         longDescription: "The Dahmakan Consumer App is the face of our food delivery service. It allows users to browse our daily changing menu, place orders, and track their delivery in real-time. The focus was on creating a delightful, buttery-smooth user experience that encourages repeat orders.",
         challenges: [
@@ -167,16 +178,18 @@ export const PROJECTS = [
             "Smart Recommendations",
             "Loyalty Rewards Program"
         ],
-        tech: ["iOS", "Swift", "Live Tracking", "Core Data", "Stripe"],
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1470&auto=format&fit=crop",
-        link: "https://apps.apple.com/my/app/dahmakan/id1030383844",
+        tech: ["iOS", "Swift", "Live Tracking", "Real-time Chat", "Core Data", "Stripe"],
+        image: popMeals,
+        links: {
+            ios: "https://apps.apple.com/my/app/id1030383844"
+        }
     },
 ];
 
 export const ARTICLES = [
     {
         title: "5 Years & Billions in Revenue: Shopify’s Epic React Native Journey",
-        date: "Nov 2024",
+        date: "Nov 2025",
         platform: "LinkedIn",
         link: "https://www.linkedin.com/pulse/5-years-billions-revenue-shopifys-epic-react-native-journey-bhavsar-z9qnf",
         description: "A deep dive into how Shopify leveraged React Native to scale their mobile engineering and drive billions in revenue.",

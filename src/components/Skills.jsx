@@ -1,106 +1,153 @@
 import { motion } from 'framer-motion';
 
 const Skills = () => {
-    const skillCategories = [
+    // Featured skills with depth and context
+    const featuredSkills = [
         {
-            title: 'Core',
-            skills: ['iOS (Native)', 'Swift (2.x-5.x)', 'Objective-C', 'React Native'],
+            name: "React Native",
+            level: "Expert",
+            years: "5+",
+            description: "Built and shipped 10+ production apps serving millions of users. Architected MoneyLion's mobile platform handling $1M+ weekly transactions.",
+            highlights: ["New Architecture (Fabric)", "TurboModules & JSI", "Performance optimization", "Native modules"],
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" className="w-8 h-8">
+                    <circle cx="0" cy="0" r="2.05" fill="currentColor" />
+                    <g stroke="currentColor" strokeWidth="1" fill="none">
+                        <ellipse rx="11" ry="4.2" />
+                        <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+                        <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+                    </g>
                 </svg>
-            ),
+            )
         },
         {
-            title: 'Architecture',
-            skills: ['Mobile Design Systems', 'Cocoa Touch', 'Core Data', 'MobX'],
+            name: "iOS Native",
+            level: "Expert",
+            years: "10+",
+            description: "Deep expertise in UIKit and SwiftUI. Led iOS development for food delivery app serving 100K+ daily orders with zero downtime.",
+            highlights: ["Swift", "UIKit", "SwiftUI", "Core Data", "Performance tuning"],
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
                 </svg>
-            ),
+            )
         },
         {
-            title: 'DevOps & Tools',
-            skills: ['Bitrise (CI/CD)', 'JIRA', 'Agile Methodologies', 'Git'],
+            name: "System Design",
+            level: "Advanced",
+            years: "8+",
+            description: "Architected scalable mobile systems handling 10× traffic spikes. Built design systems used by 35+ engineers across platforms.",
+            highlights: ["Microservices", "CI/CD pipelines", "Design systems", "Performance at scale"],
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+                    <circle cx="12" cy="5" r="2" />
+                    <circle cx="5" cy="12" r="2" />
+                    <circle cx="12" cy="12" r="2" />
+                    <circle cx="19" cy="12" r="2" />
+                    <circle cx="5" cy="19" r="2" />
+                    <circle cx="12" cy="19" r="2" />
+                    <circle cx="19" cy="19" r="2" />
+                    <line x1="12" y1="7" x2="12" y2="10" />
+                    <line x1="10" y1="12" x2="7" y2="12" />
+                    <line x1="14" y1="12" x2="17" y2="12" />
+                    <line x1="5" y1="14" x2="5" y2="17" />
+                    <line x1="12" y1="14" x2="12" y2="17" />
+                    <line x1="19" y1="14" x2="19" y2="17" />
                 </svg>
-            ),
-        },
-        {
-            title: 'Payments',
-            skills: ['Apple Pay', 'Google Pay', 'Stripe Integration', 'In-App Purchases'],
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
-                </svg>
-            ),
-        },
+            )
+        }
     ];
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5 }
-        }
+    // Other skills - compact list
+    const otherSkills = {
+        "Frontend & Web": ["TypeScript", "React.js", "Next.js", "Tailwind CSS"],
+        "Backend & APIs": ["Node.js", "REST APIs", "GraphQL", "Firebase"],
+        "DevOps & Tools": ["Bitrise CI/CD", "Fastlane", "Git", "Xcode"],
+        "Payments & Integration": ["Apple Pay", "Google Pay", "Stripe", "In-App Purchases"]
     };
 
     return (
-        <section id="skills" className="py-20 bg-background">
+        <section id="skills" className="py-24 md:py-32 bg-background">
             <div className="container mx-auto px-6">
                 <motion.h2
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-3xl font-bold text-text mb-12 flex items-center"
+                    className="text-4xl md:text-5xl font-bold text-text mb-12 flex items-center"
                 >
                     <span className="text-primary mr-2">03.</span> Technical Arsenal
                 </motion.h2>
 
+                {/* Featured Skills */}
+                <div className="mb-16">
+                    <h3 className="text-xl font-bold text-text mb-8">Core Expertise</h3>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {featuredSkills.map((skill, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="bg-surface p-6 rounded-xl border border-white/5 hover:border-primary/50 transition-all duration-300 group"
+                            >
+                                {/* Icon and Header */}
+                                <div className="flex items-start justify-between mb-4">
+                                    <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                        {skill.icon}
+                                    </div>
+                                    <div className="text-right">
+                                        <div className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                                            {skill.level}
+                                        </div>
+                                        <div className="text-xs text-muted mt-1">{skill.years} years</div>
+                                    </div>
+                                </div>
+
+                                {/* Skill Name */}
+                                <h4 className="text-xl font-bold text-text mb-3">{skill.name}</h4>
+
+                                {/* Description */}
+                                <p className="text-sm text-muted mb-4 leading-relaxed">
+                                    {skill.description}
+                                </p>
+
+                                {/* Highlights */}
+                                <div className="flex flex-wrap gap-2">
+                                    {skill.highlights.map((highlight, idx) => (
+                                        <span key={idx} className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                                            {highlight}
+                                        </span>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Other Skills - Compact */}
                 <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.1 }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                    {skillCategories.map((category, index) => (
-                        <motion.div
-                            key={index}
-                            variants={itemVariants}
-                            className="bg-surface p-6 rounded-xl border border-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 group"
-                        >
-                            <div className="bg-background/50 w-12 h-12 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                                {category.icon}
+                    <h3 className="text-xl font-bold text-text mb-6">Also Proficient In</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {Object.entries(otherSkills).map(([category, skills], index) => (
+                            <div key={index} className="bg-surface/50 p-4 rounded-lg border border-white/5">
+                                <h4 className="text-sm font-semibold text-text mb-3">{category}</h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {skills.map((skill, idx) => (
+                                        <span key={idx} className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
-
-                            <h3 className="text-lg font-bold text-text mb-4">{category.title}</h3>
-
-                            <ul className="space-y-2">
-                                {category.skills.map((skill, idx) => (
-                                    <li key={idx} className="text-muted text-sm flex items-center">
-                                        <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
-                                        {skill}
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    ))}
+                        ))}
+                    </div>
                 </motion.div>
             </div>
         </section>

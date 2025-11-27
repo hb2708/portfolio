@@ -8,10 +8,12 @@ function App() {
     return (
         <div className="min-h-screen bg-background text-text font-sans selection:bg-primary/30">
             <Navbar />
-            <Routes>
-                <Route index element={<Home />} />
-                <Route path="projects/:id" element={<ProjectDetails />} />
-            </Routes>
+            <main>
+                <Routes>
+                    <Route index element={<Home />} />
+                    <Route path="projects/:id" element={<ProjectDetails />} />
+                </Routes>
+            </main>
             <Footer />
         </div>
     );

@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
+import { Globe, ExternalLink } from 'lucide-react';
+import { AppStoreIcon, PlayStoreIcon } from './Icons';
 import { PROJECTS } from '../constants';
 
 // Define variants for the container if they are not already defined
@@ -16,15 +18,16 @@ const containerVariants = {
 };
 
 const Projects = () => {
+    const [searchParams] = useSearchParams();
     return (
-        <section id="projects" className="py-20 bg-surface/30">
+        <section id="projects" className="py-24 md:py-32 bg-surface/50">
             <div className="container mx-auto px-6">
                 <motion.h2
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-3xl font-bold text-text mb-12 flex items-center"
+                    className="text-4xl md:text-5xl font-bold text-text mb-12 flex items-center"
                 >
                     <span className="text-primary mr-2">02.</span> Featured Projects
                 </motion.h2>
@@ -46,8 +49,7 @@ const Projects = () => {
                             className="bg-background rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full"
                         >
                             {/* Image Container */}
-                            <div className="relative h-48 overflow-hidden">
-                                <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                            <div className="relative h-48 overflow-hidden bg-surface">
                                 <img
                                     src={project.image}
                                     alt={project.title}
@@ -65,28 +67,73 @@ const Projects = () => {
                                 </p>
 
                                 <div className="flex flex-wrap gap-2 mb-6">
-                                    {project.tech.slice(0, 3).map((t) => (
-                                        <span key={t} className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">
+                                    {project.tech.slice(0, 5).map((t) => (
+                                        <span key={t} className="text-xs font-mono text-primary bg-primary/10 px-3 py-1.5 rounded-md border border-primary/20">
                                             {t}
                                         </span>
                                     ))}
-                                    {project.tech.length > 3 && (
-                                        <span className="text-xs font-mono text-muted bg-white/5 px-2 py-1 rounded">
-                                            +{project.tech.length - 3}
-                                        </span>
-                                    )}
                                 </div>
 
-                                <Link
-                                    to={`/projects/${project.id}`}
-                                    state={{ fromList: true }}
-                                    className="inline-flex items-center gap-2 text-sm font-medium text-text hover:text-primary transition-colors"
-                                >
-                                    View Details
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                                    </svg>
-                                </Link>
+                                {searchParams.get('debug') === 'true' ? (
+                                    <Link
+                                        to={`/projects/${project.id}`}
+                                        state={{ fromList: true }}
+                                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary/10 border border-primary/30 text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all group-hover:border-primary w-full"
+                                    >
+                                        View Case Study
+                                        <ExternalLink className="w-4 h-4" />
+                                    </Link>
+                                ) : (
+                                    <div className="flex flex-wrap gap-3 mt-auto">
+                                        {project.links ? (
+                                            <>
+                                                {project.links.ios && (
+                                                    <a
+                                                        href={project.links.ios}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-surface border border-white/10 text-text font-medium rounded-lg hover:bg-white/10 hover:border-white/20 transition-all text-sm"
+                                                    >
+                                                        <AppStoreIcon className="w-4 h-4" />
+                                                        <span>App Store</span>
+                                                    </a>
+                                                )}
+                                                {project.links.android && (
+                                                    <a
+                                                        href={project.links.android}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-surface border border-white/10 text-text font-medium rounded-lg hover:bg-white/10 hover:border-white/20 transition-all text-sm"
+                                                    >
+                                                        <PlayStoreIcon className="w-4 h-4" />
+                                                        <span>Play Store</span>
+                                                    </a>
+                                                )}
+                                                {project.links.web && (
+                                                    <a
+                                                        href={project.links.web}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-surface border border-white/10 text-text font-medium rounded-lg hover:bg-white/10 hover:border-white/20 transition-all text-sm"
+                                                    >
+                                                        <Globe className="w-4 h-4" />
+                                                        <span>Website</span>
+                                                    </a>
+                                                )}
+                                            </>
+                                        ) : (
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary/10 border border-primary/30 text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all group-hover:border-primary"
+                                            >
+                                                View Live Project
+                                                <ExternalLink className="w-4 h-4" />
+                                            </a>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
                     ))}

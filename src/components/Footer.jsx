@@ -5,7 +5,7 @@ const Footer = () => {
         <footer id="contact" className="bg-background border-t border-white/10 py-20">
             <div className="container mx-auto px-6 text-center">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">Ready to Scale Your Mobile Team?</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">Let&apos;s Build Something Exceptional</h2>
                     <p className="text-muted text-lg mb-10 max-w-2xl mx-auto">
                         I&apos;m always open to discussing technical leadership roles and complex engineering challenges.
                         Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
@@ -16,7 +16,7 @@ const Footer = () => {
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 mb-16"
                     >
                         <Mail className="w-5 h-5" />
-                        Let&apos;s Chat
+                        Get In Touch
                     </a>
 
                     <div className="flex items-center justify-center gap-8 mb-16">

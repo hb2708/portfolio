@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink, Layers, Zap, CheckCircle } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Layers, Zap, CheckCircle, Globe } from 'lucide-react';
+import { AppStoreIcon, PlayStoreIcon } from './Icons';
 import { PROJECTS } from '../constants';
 
 const ProjectDetails = () => {
@@ -66,16 +67,54 @@ const ProjectDetails = () => {
                             ))}
                         </div>
 
-                        <div className="flex gap-4">
-                            <a
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/25"
-                            >
-                                <ExternalLink className="w-5 h-5 mr-2" />
-                                Visit Live
-                            </a>
+                        <div className="flex flex-wrap gap-4">
+                            {project.links ? (
+                                <>
+                                    {project.links.ios && (
+                                        <a
+                                            href={project.links.ios}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center px-6 py-3 bg-surface border border-white/10 text-text font-bold rounded-lg hover:bg-white/10 hover:border-white/20 transition-all shadow-lg"
+                                        >
+                                            <AppStoreIcon className="w-5 h-5 mr-2" />
+                                            App Store
+                                        </a>
+                                    )}
+                                    {project.links.android && (
+                                        <a
+                                            href={project.links.android}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center px-6 py-3 bg-surface border border-white/10 text-text font-bold rounded-lg hover:bg-white/10 hover:border-white/20 transition-all shadow-lg"
+                                        >
+                                            <PlayStoreIcon className="w-5 h-5 mr-2" />
+                                            Play Store
+                                        </a>
+                                    )}
+                                    {project.links.web && (
+                                        <a
+                                            href={project.links.web}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center px-6 py-3 bg-surface border border-white/10 text-text font-bold rounded-lg hover:bg-white/10 hover:border-white/20 transition-all shadow-lg"
+                                        >
+                                            <Globe className="w-5 h-5 mr-2" />
+                                            Website
+                                        </a>
+                                    )}
+                                </>
+                            ) : (
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/25"
+                                >
+                                    <ExternalLink className="w-5 h-5 mr-2" />
+                                    Visit Live
+                                </a>
+                            )}
                         </div>
                     </div>
                     <div className="order-1 lg:order-2">

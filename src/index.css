@@ -17,22 +17,30 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-text font-sans antialiased;
   }
-  
+
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
+
   ::-webkit-scrollbar-track {
     @apply bg-background;
   }
+
   ::-webkit-scrollbar-thumb {
     @apply bg-surface rounded-full;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-muted;
+  }
+
+  /* Global Focus Styles for Accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 }
