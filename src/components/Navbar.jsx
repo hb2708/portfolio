@@ -63,8 +63,8 @@ const Navbar = () => {
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link to="/" className="text-xl font-mono font-bold text-text hover:text-primary transition-colors z-50">
-                    &lt;Harshal.Dev /&gt;
+                <Link to="/" className="text-xl font-bold text-text hover:text-primary transition-colors z-50">
+                    Harshal<span className="text-primary">.</span>
                 </Link>
 
                 {/* Desktop Menu */}
