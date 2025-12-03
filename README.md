@@ -6,10 +6,12 @@ My professional portfolio showcasing my work as a Staff Engineer and React Nativ
 
 ## 🚀 Tech Stack
 
+- **Language:** TypeScript
 - **Framework:** React 19 + Vite
 - **Styling:** TailwindCSS
 - **Animations:** Framer Motion
 - **Icons:** Lucide React
+- **Quality Control:** Husky
 - **Deployment:** Vercel
 - **Package Manager:** pnpm
 
@@ -41,6 +43,9 @@ pnpm install
 
 # Start development server
 pnpm run dev
+
+# Run type checking
+pnpm run type-check
 ```
 
 Visit `http://localhost:5173` to view the site locally.
@@ -53,26 +58,32 @@ pnpm run build
 
 The optimized build will be in the `dist/` folder.
 
+### Pre-commit Hooks
+
+This project uses **Husky** to enforce quality standards. Before every commit, the following checks run automatically:
+- `pnpm lint`: Runs ESLint on the entire project.
+- `pnpm run build`: Verifies the project builds successfully.
+
 ## 📂 Project Structure
 
 ```
 portfolio/
 ├── src/
 │   ├── components/      # React components
-│   │   ├── Navbar.jsx
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Projects.jsx
-│   │   ├── ProjectDetails.jsx
-│   │   ├── Skills.jsx
-│   │   ├── Experience.jsx
-│   │   ├── Writing.jsx
-│   │   ├── Awards.jsx
-│   │   └── Footer.jsx
+│   │   ├── Navbar.tsx
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Projects.tsx
+│   │   ├── ProjectDetails.tsx
+│   │   ├── Skills.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Writing.tsx
+│   │   ├── Awards.tsx
+│   │   └── Footer.tsx
 │   ├── constants/       # Centralized data
-│   │   └── index.js
-│   ├── App.jsx
-│   ├── main.jsx
+│   │   └── index.ts
+│   ├── App.tsx
+│   ├── main.tsx
 │   └── index.css
 ├── public/
 │   └── resume.pdf
@@ -91,7 +102,7 @@ portfolio/
 
 ## 📝 Content Management
 
-All content (projects, experience, skills, articles) is centralized in `src/constants/index.js` for easy updates.
+All content (projects, experience, skills, articles) is centralized in `src/constants/index.ts` for easy updates.
 
 ## 📄 License
 
