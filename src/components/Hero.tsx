@@ -1,4 +1,3 @@
-import harshalImg from '../assets/harshal.webp';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Github, Linkedin, Mail } from 'lucide-react';
@@ -104,7 +103,7 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-full blur-3xl opacity-20 animate-pulse"></div>
 
                             <img
-                                src={harshalImg}
+                                src="/harshal.webp"
                                 alt="Harshal Bhavsar"
                                 className="relative w-full h-full object-cover rounded-full border-4 border-primary/20 shadow-2xl shadow-primary/10 hover:border-primary/40 hover:shadow-primary/20 transition-all duration-500"
                             />
