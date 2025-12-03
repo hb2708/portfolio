@@ -108,6 +108,22 @@ const Hero = () => {
                                 alt="Harshal Bhavsar"
                                 className="relative w-full h-full object-cover rounded-full border-4 border-primary/20 shadow-2xl shadow-primary/10 hover:border-primary/40 hover:shadow-primary/20 transition-all duration-500"
                             />
+
+                            {/* Floating Badges */}
+                            <motion.div
+                                animate={{ y: [0, -10, 0] }}
+                                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                                className="absolute -top-4 -right-4 bg-surface/90 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-xl"
+                            >
+                                <span className="text-2xl">🚀</span>
+                            </motion.div>
+                            <motion.div
+                                animate={{ y: [0, 10, 0] }}
+                                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
+                                className="absolute -bottom-4 -left-4 bg-surface/90 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-xl"
+                            >
+                                <span className="text-2xl">📱</span>
+                            </motion.div>
                         </div>
                     </motion.div>
                 </div>
