@@ -3,6 +3,25 @@ import popMeals from "../assets/pop_meals_customer.jpg";
 import popMealsRider from "../assets/pop_meals_rider.png";
 import moneylion from "../assets/moneylion.png";
 
+export interface Project {
+    id: string;
+    title: string;
+    subtitle?: string;
+    description: string;
+    longDescription: string;
+    challenges?: string[];
+    solutions?: string[];
+    features?: string[];
+    tech: string[];
+    image: string;
+    links?: {
+        ios?: string;
+        android?: string;
+        web?: string;
+    };
+    link?: string;
+}
+
 export const NAV_LINKS = [
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
@@ -10,6 +29,8 @@ export const NAV_LINKS = [
     { name: "Writing", href: "#writing" },
     { name: "Contact", href: "#contact" },
 ];
+
+export const NAVBAR_HEIGHT = 80;
 
 export const SKILLS = [
     {
@@ -34,7 +55,16 @@ export const SKILLS = [
     },
 ];
 
-export const EXPERIENCES = [
+export interface Experience {
+    company: string;
+    role: string;
+    period: string;
+    location: string;
+    description: string[];
+    tech: string[];
+}
+
+export const EXPERIENCES: Experience[] = [
     {
         company: "MoneyLion",
         role: "Staff Engineer",
@@ -98,7 +128,7 @@ export const EXPERIENCES = [
     },
 ];
 
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
     {
         id: "moneylion",
         title: "MoneyLion App",
