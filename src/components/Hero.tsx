@@ -81,6 +81,8 @@ const Hero = () => {
 
                             <img
                                 src="/harshal.webp"
+                                srcSet="/harshal-mobile.webp 300w, /harshal.webp 500w"
+                                sizes="(max-width: 768px) 300px, 500px"
                                 alt="Harshal Bhavsar"
                                 width="500"
                                 height="500"
