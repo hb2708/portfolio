@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/webp" href="/harshal.webp" />
   <link rel="apple-touch-icon" href="/harshal.webp" />
+  <link rel="preload" as="image" href="/harshal.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harshal Bhavsar | Staff Engineer, iOS & React Native Expert</title>
   <meta name="description"
@@ -16,7 +17,7 @@
   <meta property="og:title" content="Harshal Bhavsar | Staff Engineer, iOS & React Native Expert" />
   <meta property="og:description"
     content="Staff Engineer specializing in React Native and iOS. 10+ years of experience building scalable mobile apps." />
-  <meta property="og:image" content="https://gyaan.tech/og-image.png" />
+  <meta property="og:image" content="https://gyaan.tech/og-image.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Harshal Bhavsar - Staff Engineer Portfolio" />
@@ -27,17 +28,27 @@
   <meta name="twitter:title" content="Harshal Bhavsar | Staff Engineer, iOS & React Native Expert" />
   <meta name="twitter:description"
     content="Staff Engineer specializing in React Native and iOS. 10+ years of experience building scalable mobile apps." />
-  <meta name="twitter:image" content="https://gyaan.tech/og-image.png" />
+  <meta name="twitter:image" content="https://gyaan.tech/og-image.webp" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW9KDWDTWS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-CW9KDWDTWS');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
     rel="stylesheet">
 </head>
 
 <body>
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

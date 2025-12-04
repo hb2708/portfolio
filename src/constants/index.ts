@@ -1,7 +1,8 @@
 import { Code2, Smartphone, Terminal, Zap } from "lucide-react";
-import popMeals from "../assets/pop_meals_customer.jpg";
-import popMealsRider from "../assets/pop_meals_rider.png";
-import moneylion from "../assets/moneylion.png";
+import { DayOneIcon, CrossPlatformIcon, RemoteIcon } from "../components/Icons";
+import popMeals from "../assets/pop_meals_customer.webp";
+import popMealsRider from "../assets/pop_meals_rider.webp";
+import moneylion from "../assets/moneylion.webp";
 
 export interface Project {
     id: string;
@@ -31,6 +32,39 @@ export const NAV_LINKS = [
 ];
 
 export const NAVBAR_HEIGHT = 80;
+
+export const HERO_CONTENT = {
+    mainHeading: "I HELP COMPANIES",
+    rotatingText: [
+        'SCALE TO MILLIONS',
+        2000,
+        'SHIP FEATURES FASTER',
+        2000,
+        'BUILD WORLD-CLASS TEAMS',
+        2000,
+    ],
+    subHeading: {
+        first: "STAFF ENGINEER",
+        second: "REACT NATIVE SPECIALIST",
+        experience: "10+ YEARS EXP",
+        connector: "&"
+    },
+    intro: {
+        prefix: "Engineering scalable mobile solutions at",
+        highlight: "MoneyLion",
+        suffix: ". Specializing in high-performance React Native architectures and distributed systems."
+    },
+    buttons: {
+        primary: "View Projects",
+        secondary: "Contact Me"
+    },
+    stats: [
+        { number: "10+", label: "YEARS_EXP" },
+        { number: "$1M+", label: "REVENUE_GEN" },
+        { number: "10x", label: "SCALABILITY" },
+        { number: "15+", label: "GLOBAL_TEAMS" }
+    ]
+};
 
 export const SKILLS = [
     {
@@ -232,3 +266,176 @@ export const ARTICLES = [
         description: "A guide on how to debug apps on newer iOS versions using older Xcode versions.",
     },
 ];
+
+export const SOCIAL_LINKS = {
+    github: {
+        url: "https://github.com/hb2708",
+        label: "GitHub"
+    },
+    linkedin: {
+        url: "https://linkedin.com/in/harshal-ios-swift-react-native",
+        label: "LinkedIn"
+    },
+    email: {
+        address: "hb2708@gmail.com",
+        url: "mailto:hb2708@gmail.com",
+        label: "Email"
+    },
+    portfolioRepo: "https://github.com/hb2708/portfolio",
+    resume: "/resume.pdf"
+};
+
+export const NAVBAR_CONTENT = {
+    logo: {
+        first: "HARSHAL",
+        second: " BHAVSAR"
+    },
+    resumeButton: "Resume",
+    mobileMenu: {
+        close: "Close menu",
+        open: "Open menu"
+    }
+};
+
+export const ABOUT_CONTENT = {
+    sectionTitle: {
+        number: "01.",
+        text: "About Me"
+    },
+    role: {
+        title: "Staff Engineer & ",
+        highlight: "Product Builder"
+    },
+    intro: [
+        {
+            text: "I specialize in ",
+            highlight1: "React Native",
+            text2: " and ",
+            highlight2: "iOS",
+            text3: " development. With 10+ years of experience, I build apps that work well and are easy to use."
+        },
+        {
+            text: "Currently leading mobile engineering at ",
+            highlight: "MoneyLion",
+            text2: ", I help the team solve hard technical problems to reach business goals."
+        }
+    ],
+    visaStatus: "No visa sponsorship required (Malaysia / India)",
+    leadership: {
+        title: "How I Lead",
+        stats: "Mentored 10+ engineers • Built systems serving millions • Led teams across 3 continents",
+        philosophy: "My leadership philosophy: Empower people, automate toil, ship value."
+    },
+    pillars: {
+        title: "Great engineering teams are built on ",
+        highlight: "three pillars",
+        items: [
+            {
+                title: "Psychological Safety",
+                description: "Creating a safe space where everyone can share ideas and learn from mistakes."
+            },
+            {
+                title: "Automation First",
+                description: "Automating repetitive tasks so the team can focus on building new features."
+            },
+            {
+                title: "Scalable Architecture",
+                description: "Building simple, maintainable systems that grow with the business."
+            }
+        ]
+    },
+    valueProps: {
+        title: "Why ",
+        highlight: "Work With Me"
+    }
+};
+
+export const ABOUT_VALUE_PROPS = [
+    {
+        title: "Day One Impact",
+        description: "I've shipped production code on my first week at every company. No 6-month ramp-up I dive into legacy codebases and start delivering immediately.",
+        icon: DayOneIcon
+    },
+    {
+        title: "Cross-Platform Expertise",
+        description: "Fluent in React Native, iOS native, and web. I can architect solutions that share code intelligently and ship features across all platforms simultaneously.",
+        icon: CrossPlatformIcon
+    },
+    {
+        title: "Remote-First Mindset",
+        description: "Led distributed teams across 3 continents. I excel at async communication, documentation, and building systems that don't require me to be the bottleneck.",
+        icon: RemoteIcon
+    }
+];
+
+export const PROJECTS_CONTENT = {
+    sectionTitle: {
+        number: "02.",
+        text: "Selected Works"
+    },
+    viewCaseStudy: "View Case Study",
+    viewProject: "View Project"
+};
+
+export const SKILLS_CONTENT = {
+    sectionTitle: {
+        number: "03.",
+        text: "Technical Arsenal"
+    },
+    coreExpertise: "Core Expertise",
+    alsoProficientIn: "Also Proficient In"
+};
+
+export const FEATURED_SKILLS = [
+    {
+        name: "React Native",
+        level: "Expert",
+        years: "6+",
+        description: "Built and shipped 10+ production apps serving millions of users. Architected MoneyLion's mobile platform handling $1M+ weekly transactions.",
+        highlights: ["New Architecture (Fabric)", "TurboModules & JSI", "Performance optimization", "Native modules"]
+    },
+    {
+        name: "iOS Native",
+        level: "Expert",
+        years: "10+",
+        description: "Deep expertise in UIKit and SwiftUI. Led iOS development for food delivery app serving 100K+ daily orders with zero downtime.",
+        highlights: ["Swift", "UIKit", "SwiftUI", "Core Data", "Performance tuning"]
+    },
+    {
+        name: "System Design",
+        level: "Advanced",
+        years: "6+",
+        description: "Architected scalable mobile systems handling 10× traffic spikes. Built design systems used by 35+ engineers across platforms.",
+        highlights: ["Microservices", "CI/CD pipelines", "Design systems", "Performance at scale"]
+    }
+];
+
+export const OTHER_SKILLS = {
+    "Frontend & Web": ["TypeScript", "React.js", "Next.js", "Tailwind CSS"],
+    "Backend & APIs": ["Node.js", "REST APIs", "GraphQL", "Firebase"],
+    "DevOps & Tools": ["Bitrise CI/CD", "Fastlane", "Git", "Xcode"],
+    "Payments & Integration": ["Apple Pay", "Google Pay", "Stripe", "In-App Purchases"]
+};
+
+export const EXPERIENCE_CONTENT = {
+    sectionTitle: {
+        number: "04.",
+        text: "Experience"
+    }
+};
+
+export const WRITING_CONTENT = {
+    sectionTitle: {
+        number: "05.",
+        text: "Writing"
+    },
+    readArticle: "Read Article"
+};
+
+export const FOOTER_CONTENT = {
+    title: "Let's Build Something Exceptional",
+    description: "I'm always open to discussing technical leadership roles and complex engineering challenges. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+    cta: "Get In Touch",
+    copyright: `© ${new Date().getFullYear()} Harshal Bhavsar. All rights reserved.`,
+    viewSource: "View Source"
+};

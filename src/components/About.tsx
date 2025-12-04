@@ -1,32 +1,15 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import {
-    DayOneIcon,
-    CrossPlatformIcon,
-    RemoteIcon,
     VisaIcon,
     PsychologicalSafetyIcon,
     AutomationIcon,
     ScalableIcon
 } from './Icons';
+import { ABOUT_CONTENT, ABOUT_VALUE_PROPS } from '../constants';
 
 const About = () => {
-    const valueProps = [
-        {
-            title: "Day One Impact",
-            description: "I've shipped production code on my first week at every company. No 6-month ramp-up I dive into legacy codebases and start delivering immediately.",
-            icon: <DayOneIcon className="w-6 h-6" />
-        },
-        {
-            title: "Cross-Platform Expertise",
-            description: "Fluent in React Native, iOS native, and web. I can architect solutions that share code intelligently and ship features across all platforms simultaneously.",
-            icon: <CrossPlatformIcon className="w-6 h-6" />
-        },
-        {
-            title: "Remote-First Mindset",
-            description: "Led distributed teams across 3 continents. I excel at async communication, documentation, and building systems that don't require me to be the bottleneck.",
-            icon: <RemoteIcon className="w-6 h-6" />
-        }
-    ];
+    // valueProps moved to constants
 
     return (
         <section id="about" className="py-24 md:py-32 bg-background overflow-hidden">
@@ -41,23 +24,22 @@ const About = () => {
                         className="w-full md:w-1/2"
                     >
                         <h2 className="text-4xl md:text-5xl font-bold text-text mb-12 flex items-center">
-                            <span className="text-primary mr-2">01.</span> About Me
+                            <span className="text-primary mr-2">{ABOUT_CONTENT.sectionTitle.number}</span> {ABOUT_CONTENT.sectionTitle.text}
                         </h2>
                         <h3 className="text-2xl font-bold text-text mb-6">
-                            Staff Engineer & <span className="text-primary">Product Builder</span>
+                            {ABOUT_CONTENT.role.title}<span className="text-primary">{ABOUT_CONTENT.role.highlight}</span>
                         </h3>
                         <p className="text-muted mb-6 leading-relaxed text-lg">
-                            I specialize in <span className="text-text font-medium">React Native</span> and <span className="text-text font-medium">iOS</span> development.
-                            With 10+ years of experience, I build apps that work well and are easy to use.
+                            {ABOUT_CONTENT.intro[0].text}<span className="text-text font-medium">{ABOUT_CONTENT.intro[0].highlight1}</span>{ABOUT_CONTENT.intro[0].text2}<span className="text-text font-medium">{ABOUT_CONTENT.intro[0].highlight2}</span>{ABOUT_CONTENT.intro[0].text3}
                         </p>
                         <p className="text-muted mb-6 leading-relaxed text-lg">
-                            Currently leading mobile engineering at <span className="text-text font-medium">MoneyLion</span>, I help the team solve hard technical problems to reach business goals.
+                            {ABOUT_CONTENT.intro[1].text}<span className="text-text font-medium">{ABOUT_CONTENT.intro[1].highlight}</span>{ABOUT_CONTENT.intro[1].text2}
                         </p>
 
                         {/* Subtle visa status badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full text-sm">
                             <VisaIcon className="w-4 h-4 text-green-400" />
-                            <span className="text-green-400 font-medium">No visa sponsorship required (Malaysia / India)</span>
+                            <span className="text-green-400 font-medium">{ABOUT_CONTENT.visaStatus}</span>
                         </div>
                     </motion.div>
 
@@ -71,15 +53,15 @@ const About = () => {
                     >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
 
-                        <h3 className="text-2xl font-bold text-text mb-6">How I Lead</h3>
+                        <h3 className="text-2xl font-bold text-text mb-6">{ABOUT_CONTENT.leadership.title}</h3>
 
                         {/* Impact-focused intro instead of generic quote */}
                         <div className="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl">
                             <p className="text-lg text-text font-semibold mb-2">
-                                Mentored 10+ engineers • Built systems serving millions • Led teams across 3 continents
+                                {ABOUT_CONTENT.leadership.stats}
                             </p>
                             <p className="text-muted text-sm">
-                                My leadership philosophy: Empower people, automate toil, ship value.
+                                {ABOUT_CONTENT.leadership.philosophy}
                             </p>
                         </div>
                     </motion.div>
@@ -94,7 +76,7 @@ const About = () => {
                     className="mb-24"
                 >
                     <h3 className="text-2xl font-bold text-text mb-8 text-center">
-                        Great engineering teams are built on <span className="text-primary">three pillars</span>
+                        {ABOUT_CONTENT.pillars.title}<span className="text-primary">{ABOUT_CONTENT.pillars.highlight}</span>
                     </h3>
 
                     {/* Enhanced bullet points with icons */}
@@ -104,8 +86,8 @@ const About = () => {
                                 <PsychologicalSafetyIcon className="w-6 h-6" />
                             </div>
                             <div>
-                                <h5 className="text-text font-bold mb-2 text-lg">Psychological Safety</h5>
-                                <p className="text-muted text-sm leading-relaxed">Creating a safe space where everyone can share ideas and learn from mistakes.</p>
+                                <h5 className="text-text font-bold mb-2 text-lg">{ABOUT_CONTENT.pillars.items[0].title}</h5>
+                                <p className="text-muted text-sm leading-relaxed">{ABOUT_CONTENT.pillars.items[0].description}</p>
                             </div>
                         </div>
 
@@ -114,8 +96,8 @@ const About = () => {
                                 <AutomationIcon className="w-6 h-6" />
                             </div>
                             <div>
-                                <h5 className="text-text font-bold mb-2 text-lg">Automation First</h5>
-                                <p className="text-muted text-sm leading-relaxed">Automating repetitive tasks so the team can focus on building new features.</p>
+                                <h5 className="text-text font-bold mb-2 text-lg">{ABOUT_CONTENT.pillars.items[1].title}</h5>
+                                <p className="text-muted text-sm leading-relaxed">{ABOUT_CONTENT.pillars.items[1].description}</p>
                             </div>
                         </div>
 
@@ -124,8 +106,8 @@ const About = () => {
                                 <ScalableIcon className="w-6 h-6" />
                             </div>
                             <div>
-                                <h5 className="text-text font-bold mb-2 text-lg">Scalable Architecture</h5>
-                                <p className="text-muted text-sm leading-relaxed">Building simple, maintainable systems that grow with the business.</p>
+                                <h5 className="text-text font-bold mb-2 text-lg">{ABOUT_CONTENT.pillars.items[2].title}</h5>
+                                <p className="text-muted text-sm leading-relaxed">{ABOUT_CONTENT.pillars.items[2].description}</p>
                             </div>
                         </div>
                     </div>
@@ -139,12 +121,12 @@ const About = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <h3 className="text-2xl font-bold text-text mb-8 text-center">
-                        Why <span className="text-primary">Work With Me</span>
+                        {ABOUT_CONTENT.valueProps.title}<span className="text-primary">{ABOUT_CONTENT.valueProps.highlight}</span>
                     </h3>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {valueProps.map((value, index) => (
+                    {ABOUT_VALUE_PROPS.map((value, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
@@ -153,8 +135,8 @@ const About = () => {
                             transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
                             className="bg-surface p-8 rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-2 group"
                         >
-                            <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
-                                {value.icon}
+                            <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-background transition-all duration-300">
+                                <value.icon className="w-6 h-6" />
                             </div>
                             <h4 className="text-xl font-bold text-text mb-3">{value.title}</h4>
                             <p className="text-base text-muted leading-relaxed">{value.description}</p>
@@ -166,4 +148,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default memo(About);

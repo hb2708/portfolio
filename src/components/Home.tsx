@@ -1,12 +1,14 @@
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, lazy, Suspense } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
 import Hero from './Hero';
-import About from './About';
-import Skills from './Skills';
-import Experience from './Experience';
-import Awards from './Awards';
-import Projects from './Projects';
-import Writing from './Writing';
+
+// Lazy load below-the-fold components
+const About = lazy(() => import('./About'));
+const Skills = lazy(() => import('./Skills'));
+const Experience = lazy(() => import('./Experience'));
+const Awards = lazy(() => import('./Awards'));
+const Projects = lazy(() => import('./Projects'));
+const Writing = lazy(() => import('./Writing'));
 
 import { NAVBAR_HEIGHT } from '../constants';
 
@@ -35,12 +37,14 @@ const Home = () => {
     return (
         <main>
             <Hero />
-            <About />
-            <Projects />
-            <Skills />
-            <Experience />
-            <Writing />
-            <Awards />
+            <Suspense fallback={<div className="min-h-screen" />}>
+                <About />
+                <Projects />
+                <Skills />
+                <Experience />
+                <Writing />
+                <Awards />
+            </Suspense>
         </main>
     );
 };

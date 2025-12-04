@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { ARTICLES } from '../constants';
+import { ARTICLES, WRITING_CONTENT } from '../constants';
 import { ReadMoreIcon } from './Icons';
 
 const Writing = () => {
@@ -14,7 +14,7 @@ const Writing = () => {
                     transition={{ duration: 0.5 }}
                     className="text-4xl md:text-5xl font-bold text-text mb-12 flex items-center"
                 >
-                    <span className="text-primary mr-2">05.</span> Writing
+                    <span className="text-primary mr-2">{WRITING_CONTENT.sectionTitle.number}</span> {WRITING_CONTENT.sectionTitle.text}
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -28,7 +28,7 @@ const Writing = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group flex flex-col h-full bg-surface p-8 rounded-2xl border border-white/5 hover:border-primary/30 hover:bg-surface/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5"
+                            className="group flex flex-col h-full bg-surface p-8 rounded-xl border border-white/5 hover:border-primary/30 hover:bg-surface/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5"
                         >
                             <div className="flex items-center justify-between mb-6">
                                 <div className="flex items-center gap-3">
@@ -48,7 +48,7 @@ const Writing = () => {
                             </p>
 
                             <div className="flex items-center text-primary font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                                Read Article
+                                {WRITING_CONTENT.readArticle}
                                 <ReadMoreIcon className="w-4 h-4 ml-2" />
                             </div>
                         </motion.a>

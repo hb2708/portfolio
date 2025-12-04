@@ -1,16 +1,70 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0F172A;
-  --color-surface: #1E293B;
-  --color-primary: #3B82F6;
-  --color-secondary: #10b981;
-  --color-accent: #61DAFB;
-  --color-text: #F8FAFC;
-  --color-muted: #94A3B8;
+  --color-background: #050505;
+  --color-surface: #0A0A0A;
+  --color-primary: #CCFF00;
+  --color-secondary: #99CC00;
+  --color-accent: #CCFF00;
+  --color-text: #E2E2E2;
+  --color-muted: #A1A1AA;
 
   --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'Fira Code', monospace;
+
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-slide-in-left: slide-in-left 0.8s ease-out forwards;
+  --animate-slide-in-up: slide-in-up 0.8s ease-out forwards;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-float-delayed: float 5s ease-in-out infinite 1s;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 }
 
 @layer base {
@@ -20,6 +74,10 @@
 
   body {
     @apply bg-background text-text font-sans antialiased;
+    background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+      linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-attachment: fixed;
   }
 
   /* Custom Scrollbar */
@@ -32,15 +90,25 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-surface rounded-full;
+    @apply bg-surface border border-white/10 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted;
+    @apply bg-primary/20;
   }
 
   /* Global Focus Styles for Accessibility */
   :focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Typography Utilities */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
   }
 }
