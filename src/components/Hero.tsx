@@ -1,5 +1,6 @@
 import { Suspense, lazy, memo } from 'react';
 import { Github, Linkedin, Mail, Rocket, Smartphone } from 'lucide-react';
+import { XIcon } from './Icons';
 import { HERO_CONTENT, SOCIAL_LINKS } from '../constants';
 import { trackEvent } from '../utils/analytics';
 
@@ -64,6 +65,9 @@ const Hero = () => {
                             </a>
                             <a href={SOCIAL_LINKS.linkedin.url} target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn Profile" onClick={() => trackEvent('SOCIAL_LINK_CLICK', { action: 'LinkedIn', label: 'Hero Section' })} className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110">
                                 <Linkedin className="w-6 h-6" />
+                            </a>
+                            <a href={SOCIAL_LINKS.x.url} target="_blank" rel="noopener noreferrer" aria-label="Visit X (Twitter) Profile" onClick={() => trackEvent('SOCIAL_LINK_CLICK', { action: 'X', label: 'Hero Section' })} className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110">
+                                <XIcon className="w-5 h-5" />
                             </a>
                             <a href={SOCIAL_LINKS.email.url} aria-label="Send Email" onClick={() => trackEvent('SOCIAL_LINK_CLICK', { action: 'Email', label: 'Hero Section' })} className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110">
                                 <Mail className="w-6 h-6" />

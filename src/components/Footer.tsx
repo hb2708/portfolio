@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { XIcon } from './Icons';
 import { FOOTER_CONTENT, SOCIAL_LINKS } from '../constants';
 import { trackEvent } from '../utils/analytics';
 
@@ -48,6 +49,19 @@ const Footer = () => {
                                 <Linkedin className="w-6 h-6" />
                             </div>
                             <span className="text-sm font-medium">{SOCIAL_LINKS.linkedin.label}</span>
+                        </a>
+                        <a
+                            href={SOCIAL_LINKS.x.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit X (Twitter) Profile"
+                            onClick={() => trackEvent('SOCIAL_LINK_CLICK', { action: 'X', label: 'Footer' })}
+                            className="text-muted hover:text-primary transition-colors flex flex-col items-center gap-2 group"
+                        >
+                            <div className="p-4 bg-surface rounded-full border border-white/5 group-hover:border-primary/30 transition-colors">
+                                <XIcon className="w-5 h-5" />
+                            </div>
+                            <span className="text-sm font-medium">{SOCIAL_LINKS.x.label}</span>
                         </a>
                     </div>
 

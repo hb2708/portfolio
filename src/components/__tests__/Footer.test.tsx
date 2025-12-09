@@ -21,8 +21,10 @@ describe('Footer Component', () => {
         renderFooter();
         const githubLinks = screen.getAllByLabelText(/Visit GitHub Profile/i);
         const linkedinLinks = screen.getAllByLabelText(/Visit LinkedIn Profile/i);
+        const xLinks = screen.getAllByLabelText(/Visit X \(Twitter\) Profile/i);
         expect(githubLinks.length).toBeGreaterThan(0);
         expect(linkedinLinks.length).toBeGreaterThan(0);
+        expect(xLinks.length).toBeGreaterThan(0);
     });
 
     it('renders copyright with current year', () => {
@@ -46,14 +48,17 @@ describe('Footer Component', () => {
         renderFooter();
         const githubLink = screen.getAllByLabelText(/Visit GitHub Profile/i)[0];
         const linkedinLink = screen.getAllByLabelText(/Visit LinkedIn Profile/i)[0];
+        const xLink = screen.getAllByLabelText(/Visit X \(Twitter\) Profile/i)[0];
 
         // Check rel attributes for security
         expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
         expect(linkedinLink).toHaveAttribute('rel', 'noopener noreferrer');
+        expect(xLink).toHaveAttribute('rel', 'noopener noreferrer');
 
         // Check target blank
         expect(githubLink).toHaveAttribute('target', '_blank');
         expect(linkedinLink).toHaveAttribute('target', '_blank');
+        expect(xLink).toHaveAttribute('target', '_blank');
     });
 
     it('renders portfolio repository link', () => {
@@ -77,6 +82,10 @@ describe('Footer Component', () => {
 
         expect(githubHref).toContain('github.com');
         expect(linkedinHref).toContain('linkedin.com');
+
+        const xLink = screen.getAllByLabelText(/Visit X \(Twitter\) Profile/i)[0];
+        expect(xLink).toHaveAttribute('href');
+        expect(xLink.getAttribute('href')).toContain('x.com');
     });
 
     it('renders contact section heading', () => {

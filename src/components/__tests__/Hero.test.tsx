@@ -46,6 +46,7 @@ describe('Hero Component', () => {
         renderHero();
         expect(screen.getByLabelText(/Visit GitHub Profile/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/Visit LinkedIn Profile/i)).toBeInTheDocument();
+        expect(screen.getByLabelText(/Visit X \(Twitter\) Profile/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/Send Email/i)).toBeInTheDocument();
     });
 
@@ -81,10 +82,13 @@ describe('Hero Component', () => {
         renderHero();
         const githubLink = screen.getByLabelText(/Visit GitHub Profile/i);
         const linkedinLink = screen.getByLabelText(/Visit LinkedIn Profile/i);
+        const xLink = screen.getByLabelText(/Visit X \(Twitter\) Profile/i);
 
         expect(githubLink).toHaveAttribute('target', '_blank');
         expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
         expect(linkedinLink).toHaveAttribute('target', '_blank');
         expect(linkedinLink).toHaveAttribute('rel', 'noopener noreferrer');
+        expect(xLink).toHaveAttribute('target', '_blank');
+        expect(xLink).toHaveAttribute('rel', 'noopener noreferrer');
     });
 });

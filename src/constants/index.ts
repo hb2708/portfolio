@@ -276,6 +276,10 @@ export const SOCIAL_LINKS = {
         url: "https://linkedin.com/in/harshal-ios-swift-react-native",
         label: "LinkedIn"
     },
+    x: {
+        url: "https://x.com/harshalb_",
+        label: "X (Twitter)"
+    },
     email: {
         address: "hb2708@gmail.com",
         url: "mailto:hb2708@gmail.com",
