@@ -86,7 +86,7 @@ const About = () => {
                                 <PsychologicalSafetyIcon className="w-6 h-6" />
                             </div>
                             <div>
-                                <h5 className="text-text font-bold mb-2 text-lg">{ABOUT_CONTENT.pillars.items[0].title}</h5>
+                                <h4 className="text-text font-bold mb-2 text-lg">{ABOUT_CONTENT.pillars.items[0].title}</h4>
                                 <p className="text-muted text-sm leading-relaxed">{ABOUT_CONTENT.pillars.items[0].description}</p>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ const About = () => {
                                 <AutomationIcon className="w-6 h-6" />
                             </div>
                             <div>
-                                <h5 className="text-text font-bold mb-2 text-lg">{ABOUT_CONTENT.pillars.items[1].title}</h5>
+                                <h4 className="text-text font-bold mb-2 text-lg">{ABOUT_CONTENT.pillars.items[1].title}</h4>
                                 <p className="text-muted text-sm leading-relaxed">{ABOUT_CONTENT.pillars.items[1].description}</p>
                             </div>
                         </div>
@@ -106,7 +106,7 @@ const About = () => {
                                 <ScalableIcon className="w-6 h-6" />
                             </div>
                             <div>
-                                <h5 className="text-text font-bold mb-2 text-lg">{ABOUT_CONTENT.pillars.items[2].title}</h5>
+                                <h4 className="text-text font-bold mb-2 text-lg">{ABOUT_CONTENT.pillars.items[2].title}</h4>
                                 <p className="text-muted text-sm leading-relaxed">{ABOUT_CONTENT.pillars.items[2].description}</p>
                             </div>
                         </div>
