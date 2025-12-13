@@ -1,178 +1,276 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/webp" href="/harshal.webp" />
+    <link rel="apple-touch-icon" href="/harshal.webp" />
+    <link
+      rel="preload"
+      as="image"
+      href="/harshal.webp"
+      imagesrcset="/harshal-mobile.webp 300w, /harshal.webp 500w"
+      imagesizes="(max-width: 768px) 300px, 500px"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harshal Bhavsar | Staff Engineer, iOS & React Native Expert</title>
+    <meta
+      name="description"
+      content="Portfolio of Harshal Bhavsar, a Staff Engineer and Mobile Specialist with 10+ years of experience building scalable apps at MoneyLion, Pop Meals, and more."
+    />
+    <link rel="canonical" href="https://www.gyaan.tech/" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/webp" href="/harshal.webp" />
-  <link rel="apple-touch-icon" href="/harshal.webp" />
-  <link rel="preload" as="image" href="/harshal.webp" imagesrcset="/harshal-mobile.webp 300w, /harshal.webp 500w"
-    imagesizes="(max-width: 768px) 300px, 500px" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harshal Bhavsar | Staff Engineer, iOS & React Native Expert</title>
-  <meta name="description"
-    content="Portfolio of Harshal Bhavsar, a Staff Engineer and Mobile Specialist with 10+ years of experience building scalable apps at MoneyLion, Pop Meals, and more." />
-  <link rel="canonical" href="https://www.gyaan.tech/" />
-
-  <!-- AISEO & Structured Data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://gyaan.tech/#harshal",
-          "name": "Harshal Bhavsar",
-          "jobTitle": "Staff Engineer",
-          "image": "https://gyaan.tech/harshal.webp",
-          "url": "https://gyaan.tech/",
-          "sameAs": [
-            "https://twitter.com/harshalb_",
-            "https://x.com/harshalb_",
-            "https://linkedin.com/in/harshal-ios-swift-react-native/",
-            "https://github.com/hb2708"
-          ],
-          "description": "Staff Engineer specializing in React Native and iOS with over 10 years of experience."
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://gyaan.tech/#website",
-          "url": "https://gyaan.tech/",
-          "name": "Harshal Bhavsar Portfolio",
-          "description": "Portfolio of Harshal Bhavsar | Staff Engineer, iOS & React Native Expert",
-          "publisher": {
-            "@id": "https://gyaan.tech/#harshal"
+    <!-- AISEO & Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://gyaan.tech/#harshal",
+            "name": "Harshal Bhavsar",
+            "jobTitle": "Staff Engineer",
+            "image": "https://gyaan.tech/harshal.webp",
+            "url": "https://gyaan.tech/",
+            "sameAs": [
+              "https://twitter.com/harshalb_",
+              "https://x.com/harshalb_",
+              "https://linkedin.com/in/harshal-ios-swift-react-native/",
+              "https://github.com/hb2708"
+            ],
+            "description": "Staff Engineer specializing in React Native and iOS with over 10 years of experience."
           },
-          "inLanguage": "en-US"
-        }
-      ]
-    }
-  </script>
+          {
+            "@type": "WebSite",
+            "@id": "https://gyaan.tech/#website",
+            "url": "https://gyaan.tech/",
+            "name": "Harshal Bhavsar Portfolio",
+            "description": "Portfolio of Harshal Bhavsar | Staff Engineer, iOS & React Native Expert",
+            "publisher": {
+              "@id": "https://gyaan.tech/#harshal"
+            },
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    </script>
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gyaan.tech/" />
-  <meta property="og:title" content="Harshal Bhavsar | Staff Engineer, iOS & React Native Expert" />
-  <meta property="og:description"
-    content="Staff Engineer specializing in React Native and iOS. 10+ years of experience building scalable mobile apps." />
-  <meta property="og:image" content="https://gyaan.tech/og-image.webp" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Harshal Bhavsar - Staff Engineer Portfolio" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gyaan.tech/" />
+    <meta
+      property="og:title"
+      content="Harshal Bhavsar | Staff Engineer, iOS & React Native Expert"
+    />
+    <meta
+      property="og:description"
+      content="Staff Engineer specializing in React Native and iOS. 10+ years of experience building scalable mobile apps."
+    />
+    <meta property="og:image" content="https://gyaan.tech/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Harshal Bhavsar - Staff Engineer Portfolio"
+    />
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://gyaan.tech/" />
-  <meta name="twitter:title" content="Harshal Bhavsar | Staff Engineer, iOS & React Native Expert" />
-  <meta name="twitter:description"
-    content="Staff Engineer specializing in React Native and iOS. 10+ years of experience building scalable mobile apps." />
-  <meta name="twitter:image" content="https://gyaan.tech/og-image.webp" />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://gyaan.tech/" />
+    <meta
+      name="twitter:title"
+      content="Harshal Bhavsar | Staff Engineer, iOS & React Native Expert"
+    />
+    <meta
+      name="twitter:description"
+      content="Staff Engineer specializing in React Native and iOS. 10+ years of experience building scalable mobile apps."
+    />
+    <meta name="twitter:image" content="https://gyaan.tech/og-image.webp" />
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW9KDWDTWS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-CW9KDWDTWS');
-  </script>
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CW9KDWDTWS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-CW9KDWDTWS')
+    </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-      rel="stylesheet" />
-  </noscript>
-</head>
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+  </head>
 
-<body>
-  <div id="root">
-    <div style="visibility: hidden; position: absolute; width: 1px; height: 1px; overflow: hidden;">
-      <h1>Harshal Bhavsar - Staff Engineer, iOS & React Native Expert</h1>
+  <body>
+    <div id="root">
+      <div
+        style="
+          visibility: hidden;
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+        "
+      >
+        <h1>Harshal Bhavsar - Staff Engineer, iOS & React Native Expert</h1>
 
-      <p>I am <strong>Harshal Bhavsar</strong>, a <strong>Staff Engineer</strong> and <strong>iOS & React Native
-          Expert</strong>. I help companies scale to millions, ship features faster, and build world-class teams. With
-        over 10 years of experience in mobile engineering, I specialize in building high-performance
-        <strong>iOS</strong> and <strong>React Native</strong> applications.
-      </p>
+        <p>
+          I am <strong>Harshal Bhavsar</strong>, a
+          <strong>Staff Engineer</strong> and
+          <strong>iOS & React Native Expert</strong>. I help companies scale to
+          millions, ship features faster, and build world-class teams. With over
+          10 years of experience in mobile engineering, I specialize in building
+          high-performance <strong>iOS</strong> and
+          <strong>React Native</strong> applications.
+        </p>
 
-      <h2>Navigation</h2>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Selected Works</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#writing">Writing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <h2>Navigation</h2>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Selected Works</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#writing">Writing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
 
-      <h2>About Me - Mobile Expert & Staff Engineer</h2>
-      <p>As a <strong>Staff Engineer</strong>, I focus on scalable architecture, developer experience, and product
-        quality. I have led teams at MoneyLion and Pop Meals. I specialize in <strong>React Native</strong> and
-        <strong>iOS</strong> development. With 10+ years of experience, I build apps that work well and are easy to use.
-        Currently leading mobile engineering at MoneyLion, I help the team solve hard technical problems to reach
-        business goals.
-      </p>
+        <h2>About Me - Mobile Expert & Staff Engineer</h2>
+        <p>
+          As a <strong>Staff Engineer</strong>, I focus on scalable
+          architecture, developer experience, and product quality. I have led
+          teams at MoneyLion and Pop Meals. I specialize in
+          <strong>React Native</strong> and <strong>iOS</strong> development.
+          With 10+ years of experience, I build apps that work well and are easy
+          to use. Currently leading mobile engineering at MoneyLion, I help the
+          team solve hard technical problems to reach business goals.
+        </p>
 
-      <h3>My Leadership Philosophy</h3>
-      <p>Mentored 10+ engineers • Built systems serving millions • Led teams across 3 continents. My leadership
-        philosophy: Empower people, automate toil, ship value.</p>
+        <h3>My Leadership Philosophy</h3>
+        <p>
+          Mentored 10+ engineers • Built systems serving millions • Led teams
+          across 3 continents. My leadership philosophy: Empower people,
+          automate toil, ship value.
+        </p>
 
-      <h3>Core Pillars</h3>
-      <p>Psychological Safety: Creating a safe space where everyone can share ideas and learn from mistakes.</p>
-      <p>Automation First: Automating repetitive tasks so the team can focus on building new features.</p>
-      <p>Scalable Architecture: Building simple, maintainable systems that grow with the business.</p>
+        <h3>Core Pillars</h3>
+        <p>
+          Psychological Safety: Creating a safe space where everyone can share
+          ideas and learn from mistakes.
+        </p>
+        <p>
+          Automation First: Automating repetitive tasks so the team can focus on
+          building new features.
+        </p>
+        <p>
+          Scalable Architecture: Building simple, maintainable systems that grow
+          with the business.
+        </p>
 
-      <h2>Technical Skills & Expertise</h2>
-      <p>My technical arsenal allows me to deliver expert-level results across the mobile stack:</p>
-      <ul>
-        <li><strong>Mobile Development:</strong> Expert in <strong>React Native</strong> (New Architecture,
-          TurboModules), <strong>iOS</strong> Native (Swift, SwiftUI, UIKit), and Objective-C.</li>
-        <li><strong>Frontend Web:</strong> Proficient in TypeScript, React.js, Next.js, and Tailwind CSS.</li>
-        <li><strong>Backend & DevOps:</strong> Experience with Node.js, GraphQL, CI/CD (Bitrise, Fastlane), and Design
-          Systems.</li>
-      </ul>
+        <h2>Technical Skills & Expertise</h2>
+        <p>
+          My technical arsenal allows me to deliver expert-level results across
+          the mobile stack:
+        </p>
+        <ul>
+          <li>
+            <strong>Mobile Development:</strong> Expert in
+            <strong>React Native</strong> (New Architecture, TurboModules),
+            <strong>iOS</strong> Native (Swift, SwiftUI, UIKit), and
+            Objective-C.
+          </li>
+          <li>
+            <strong>Frontend Web:</strong> Proficient in TypeScript, React.js,
+            Next.js, and Tailwind CSS.
+          </li>
+          <li>
+            <strong>Backend & DevOps:</strong> Experience with Node.js, GraphQL,
+            CI/CD (Bitrise, Fastlane), and Design Systems.
+          </li>
+        </ul>
 
-      <h2>Why Work With Me?</h2>
-      <p><strong>Day One Impact:</strong> I ship production code in my first week. No long ramp-up periods; I dive into
-        legacy codebases and deliver value immediately.</p>
-      <p><strong>Cross-Platform Expertise:</strong> I am fluent in both <strong>React Native</strong> and native
-        <strong>iOS</strong>, allowing me to architect solutions that share code intelligently while maintaining native
-        performance.
-      </p>
-      <p><strong>Remote-First Leader:</strong> I have successfully led distributed teams across 3 continents, excelling
-        at async communication and documentation.</p>
+        <h2>Why Work With Me?</h2>
+        <p>
+          <strong>Day One Impact:</strong> I ship production code in my first
+          week. No long ramp-up periods; I dive into legacy codebases and
+          deliver value immediately.
+        </p>
+        <p>
+          <strong>Cross-Platform Expertise:</strong> I am fluent in both
+          <strong>React Native</strong> and native <strong>iOS</strong>,
+          allowing me to architect solutions that share code intelligently while
+          maintaining native performance.
+        </p>
+        <p>
+          <strong>Remote-First Leader:</strong> I have successfully led
+          distributed teams across 3 continents, excelling at async
+          communication and documentation.
+        </p>
 
-      <h2>Experience</h2>
-      <h3>MoneyLion - Staff Engineer</h3>
-      <p>Built Mobile Design System used by 35+ engineers. Optimized performance to handle 10× traffic spikes. Led Apple
-        Pay/Google Pay integration.</p>
+        <h2>Experience</h2>
+        <h3>MoneyLion - Staff Engineer</h3>
+        <p>
+          Built Mobile Design System used by 35+ engineers. Optimized
+          performance to handle 10× traffic spikes. Led Apple Pay/Google Pay
+          integration.
+        </p>
 
-      <h3>Pop Meals (Dahmakan) - Senior iOS Engineer</h3>
-      <p>Led iOS and React Native apps serving 100K+ daily orders. Shipped features for consumer and rider apps with
-        zero downtime.</p>
+        <h3>Pop Meals (Dahmakan) - Senior iOS Engineer</h3>
+        <p>
+          Led iOS and React Native apps serving 100K+ daily orders. Shipped
+          features for consumer and rider apps with zero downtime.
+        </p>
 
-      <h2>Selected Projects</h2>
-      <ul>
-        <li><a href="/projects/moneylion">MoneyLion Financial Super App - Leading mobile engineering for a financial
-            super app.</a></li>
-        <li><a href="/projects/dahmakan-rider">Pop Meals Rider App - Logistics & Delivery solution.</a></li>
-        <li><a href="/projects/dahmakan-ios">Pop Meals Customer App - Food Delivery Platform.</a></li>
-      </ul>
+        <h2>Selected Projects</h2>
+        <ul>
+          <li>
+            <a href="/projects/moneylion"
+              >MoneyLion Financial Super App - Leading mobile engineering for a
+              financial super app.</a
+            >
+          </li>
+          <li>
+            <a href="/projects/dahmakan-rider"
+              >Pop Meals Rider App - Logistics & Delivery solution.</a
+            >
+          </li>
+          <li>
+            <a href="/projects/dahmakan-ios"
+              >Pop Meals Customer App - Food Delivery Platform.</a
+            >
+          </li>
+        </ul>
 
-      <h2>Connect</h2>
-      <ul>
-        <li><a href="https://x.com/harshalb_">X (Twitter)</a></li>
-        <li><a href="https://linkedin.com/in/harshal-ios-swift-react-native/">LinkedIn</a></li>
-        <li><a href="https://github.com/hb2708">GitHub</a></li>
-      </ul>
+        <h2>Connect</h2>
+        <ul>
+          <li><a href="https://x.com/harshalb_">X (Twitter)</a></li>
+          <li>
+            <a href="https://linkedin.com/in/harshal-ios-swift-react-native/"
+              >LinkedIn</a
+            >
+          </li>
+          <li><a href="https://github.com/hb2708">GitHub</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
-
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

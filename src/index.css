@@ -1,13 +1,13 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-background: #050505;
-  --color-surface: #0A0A0A;
-  --color-primary: #CCFF00;
-  --color-secondary: #99CC00;
-  --color-accent: #CCFF00;
-  --color-text: #E2E2E2;
-  --color-muted: #A1A1AA;
+  --color-surface: #0a0a0a;
+  --color-primary: #ccff00;
+  --color-secondary: #99cc00;
+  --color-accent: #ccff00;
+  --color-text: #e2e2e2;
+  --color-muted: #a1a1aa;
 
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
@@ -55,7 +55,6 @@
   }
 
   @keyframes float {
-
     0%,
     100% {
       transform: translateY(0);
@@ -74,7 +73,8 @@
 
   body {
     @apply bg-background text-text font-sans antialiased;
-    background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+    background-image:
+      linear-gradient(to right, #1a1a1a 1px, transparent 1px),
       linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
     background-size: 50px 50px;
     background-attachment: fixed;

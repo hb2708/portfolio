@@ -28,7 +28,8 @@ My professional portfolio showcasing my work as a Staff Engineer and React Nativ
 ## 🛠️ Local Development
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - pnpm (or npm/yarn)
 
 ### Installation
@@ -61,6 +62,7 @@ The optimized build will be in the `dist/` folder.
 ### Pre-commit Hooks
 
 This project uses **Husky** to enforce quality standards. Before every commit, the following checks run automatically:
+
 - `pnpm lint`: Runs ESLint on the entire project.
 - `pnpm run build`: Verifies the project builds successfully.
 
@@ -111,6 +113,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Harshal Bhavsar**
+
 - GitHub: [@hb2708](https://github.com/hb2708)
 - LinkedIn: [harshal-ios-swift-react-native](https://linkedin.com/in/harshal-ios-swift-react-native)
 - Email: hb2708@gmail.com

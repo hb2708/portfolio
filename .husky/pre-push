@@ -1,0 +1,12 @@
+
+
+echo "Running pre-push checks..."
+
+echo "1. Checking formatting..."
+pnpm format:check
+
+echo "2. Linting..."
+pnpm lint
+
+echo "3. Building..."
+pnpm build

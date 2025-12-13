@@ -7,6 +7,7 @@ import tseslint from 'typescript-eslint'
 
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import importPlugin from 'eslint-plugin-import'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 export default tseslint.config(
   { ignores: ['dist', 'coverage'] },
@@ -16,6 +17,7 @@ export default tseslint.config(
       ...tseslint.configs.recommended,
       importPlugin.flatConfigs.recommended,
       jsxA11y.flatConfigs.recommended,
+      eslintConfigPrettier,
     ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
