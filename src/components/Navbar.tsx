@@ -15,7 +15,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [hasScrolled, setHasScrolled] = useState(false)
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
+  useMotionValueEvent(scrollY, 'change', (latest) => {
     setHasScrolled(latest > 20)
   })
 
@@ -32,9 +32,10 @@ const Navbar = () => {
           className={`
             relative flex items-center justify-between w-full max-w-5xl px-6 py-3 
             rounded-full transition-all duration-300
-            ${hasScrolled || isMobileMenuOpen
-              ? 'bg-black/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
-              : 'bg-transparent border border-transparent'
+            ${
+              hasScrolled || isMobileMenuOpen
+                ? 'bg-black/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
+                : 'bg-transparent border border-transparent'
             }
           `}
         >
@@ -66,9 +67,7 @@ const Navbar = () => {
               href={SOCIAL_LINKS.resume}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() =>
-                trackEvent('RESUME_DOWNLOAD', { label: 'Navbar' })
-              }
+              onClick={() => trackEvent('RESUME_DOWNLOAD', { label: 'Navbar' })}
               className="hidden md:block px-5 py-2 text-sm font-bold text-background bg-primary hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] rounded-full transition-all duration-300 uppercase tracking-wider font-mono"
             >
               {NAVBAR_CONTENT.resumeButton}

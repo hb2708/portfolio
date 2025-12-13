@@ -1,11 +1,14 @@
+import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Home from './components/Home'
-import ProjectDetails from './components/ProjectDetails'
 import ErrorBoundary from './components/ErrorBoundary'
+
+// Lazy load pages
+const Home = lazy(() => import('./components/Home'))
+const ProjectDetails = lazy(() => import('./components/ProjectDetails'))
 
 function App() {
   return (
@@ -19,10 +22,12 @@ function App() {
       <Navbar />
       <main id="main-content">
         <ErrorBoundary>
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="projects/:id" element={<ProjectDetails />} />
-          </Routes>
+          <Suspense fallback={<div className="min-h-screen bg-background" />}>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="projects/:id" element={<ProjectDetails />} />
+            </Routes>
+          </Suspense>
         </ErrorBoundary>
       </main>
       <Footer />

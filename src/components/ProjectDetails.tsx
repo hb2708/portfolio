@@ -137,6 +137,8 @@ const ProjectDetails = () => {
               <img
                 src={project.image}
                 alt={project.title}
+                fetchPriority="high"
+                loading="eager"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
             </div>
