@@ -7,3 +7,4 @@ yarn.lock
 dist
 coverage
 node_modules
+*.mdx
