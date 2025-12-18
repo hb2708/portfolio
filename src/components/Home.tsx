@@ -1,6 +1,7 @@
 import { useLayoutEffect, lazy, Suspense } from 'react'
 import { useLocation, useNavigationType } from 'react-router-dom'
 import Hero from './Hero'
+import SEO from './SEO'
 
 // Lazy load below-the-fold components
 const About = lazy(() => import('./About'))
@@ -36,6 +37,7 @@ const Home = () => {
 
   return (
     <main>
+      <SEO />
       <Hero />
       <Suspense fallback={<div className="min-h-screen" />}>
         <About />
