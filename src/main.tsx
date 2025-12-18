@@ -17,7 +17,10 @@ const app = (
   </StrictMode>
 )
 
-if (container.hasChildNodes() && !container.innerHTML.includes('<!--app-html-->')) {
+if (
+  container.hasChildNodes() &&
+  !container.innerHTML.includes('<!--app-html-->')
+) {
   hydrateRoot(container, app)
 } else {
   createRoot(container).render(app)

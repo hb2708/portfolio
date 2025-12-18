@@ -32,12 +32,14 @@ export default defineConfig(({ isSsrBuild }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: isSsrBuild ? undefined : {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          animations: ['framer-motion', 'react-type-animation'],
-          icons: ['lucide-react'],
-          blog: ['@mdx-js/react', 'shiki'],
-        },
+        manualChunks: isSsrBuild
+          ? undefined
+          : {
+              vendor: ['react', 'react-dom', 'react-router-dom'],
+              animations: ['framer-motion', 'react-type-animation'],
+              icons: ['lucide-react'],
+              blog: ['@mdx-js/react', 'shiki'],
+            },
       },
     },
   },
