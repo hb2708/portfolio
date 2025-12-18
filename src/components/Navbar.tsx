@@ -6,9 +6,52 @@ import {
   useMotionValueEvent,
 } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { NAV_LINKS, NAVBAR_CONTENT, SOCIAL_LINKS } from '../constants'
 import { trackEvent } from '../utils/analytics'
+
+// Smart NavLink that handles both routes and anchor links
+const NavLink = ({
+  href,
+  children,
+  onClick,
+  className,
+}: {
+  href: string
+  children: React.ReactNode
+  onClick?: () => void
+  className?: string
+}) => {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // If it's a route (starts with /), use normal navigation
+    if (href.startsWith('/')) {
+      e.preventDefault()
+      navigate(href)
+      onClick?.()
+      return
+    }
+
+    // If it's an anchor link and we're not on home page, navigate to home first
+    if (href.startsWith('#') && location.pathname !== '/') {
+      e.preventDefault()
+      navigate('/' + href)
+      onClick?.()
+      return
+    }
+
+    // Otherwise, let the default anchor behavior work
+    onClick?.()
+  }
+
+  return (
+    <a href={href} onClick={handleClick} className={className}>
+      {children}
+    </a>
+  )
+}
 
 const Navbar = () => {
   const { scrollY } = useScroll()
@@ -32,10 +75,9 @@ const Navbar = () => {
           className={`
             relative flex items-center justify-between w-full max-w-5xl px-6 py-3 
             rounded-full transition-all duration-300
-            ${
-              hasScrolled || isMobileMenuOpen
-                ? 'bg-black/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
-                : 'bg-transparent border border-transparent'
+            ${hasScrolled || isMobileMenuOpen
+              ? 'bg-black/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
+              : 'bg-transparent border border-transparent'
             }
           `}
         >
@@ -51,13 +93,13 @@ const Navbar = () => {
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-1">
             {NAV_LINKS.map((link) => (
-              <a
+              <NavLink
                 key={link.name}
                 href={link.href}
                 className="px-4 py-2 text-sm font-medium text-muted hover:text-primary hover:bg-white/5 rounded-full transition-all uppercase tracking-wide font-mono"
               >
                 {link.name}
-              </a>
+              </NavLink>
             ))}
           </div>
 
@@ -101,14 +143,14 @@ const Navbar = () => {
           >
             <div className="flex flex-col space-y-4">
               {NAV_LINKS.map((link) => (
-                <a
+                <NavLink
                   key={link.name}
                   href={link.href}
                   onClick={handleMobileNavClick}
                   className="text-lg font-medium text-text hover:text-primary transition-colors font-display uppercase tracking-wider px-2 py-1"
                 >
                   {link.name}
-                </a>
+                </NavLink>
               ))}
               <div className="h-px bg-white/10 my-2" />
               <a
