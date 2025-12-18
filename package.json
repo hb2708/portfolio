@@ -14,17 +14,27 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "validate-blog": "node scripts/validate-blog.js"
   },
   "dependencies": {
+    "@mdx-js/react": "^3.1.1",
+    "@mdx-js/rollup": "^3.1.1",
     "@vercel/analytics": "^1.6.1",
     "@vercel/speed-insights": "^1.3.1",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.555.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
+    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.9.6",
-    "react-type-animation": "^3.2.0"
+    "react-type-animation": "^3.2.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-mdx-frontmatter": "^5.2.0",
+    "shiki": "^3.20.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

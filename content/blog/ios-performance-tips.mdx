@@ -1,0 +1,184 @@
+---
+title: 'iOS Performance Tips: From 30 FPS to Butter-Smooth 60 FPS'
+description: 'Practical techniques I used at Pop Meals to achieve silky-smooth scrolling and animations in our iOS apps'
+date: '2024-12-15'
+tags: ['ios', 'swift', 'performance', 'uikit']
+published: true
+image: '/blog/ios-performance.png'
+author: 'Harshal Bhaar'
+readingTime: '2 min read'
+---
+
+# iOS Performance Tips: From 30 FPS to Butter-Smooth 60 FPS
+
+At Pop Meals, we served 100K+ daily orders through our iOS app. Users expect _instant_ feedback - any lag means lost orders. Here are the techniques that helped us achieve consistent 60 FPS.
+
+## Measure First, Optimize Second
+
+Before optimizing anything, profile your app:
+
+```swift
+// Add this to identify slow frames
+CADisplayLink(target: self, selector: #selector(frameCallback)).add(to: .main, forMode: .common)
+
+@objc func frameCallback(displayLink: CADisplayLink) {
+    let frameDuration = displayLink.targetTimestamp - displayLink.timestamp
+    if frameDuration > 1/60 {
+        print("⚠️ Dropped frame: \(frameDuration * 1000)ms")
+    }
+}
+```
+
+Use **Instruments** with the Time Profiler and Core Animation templates. They'll tell you exactly where time is spent.
+
+## The Big Three: Images, Layout, and Drawing
+
+### 1. Image Loading Done Right
+
+Never decode images on the main thread:
+
+```swift
+// ❌ Bad - blocks main thread
+imageView.image = UIImage(named: "hero")
+
+// ✅ Good - decode on background thread
+DispatchQueue.global(qos: .userInitiated).async {
+    guard let image = UIImage(named: "hero"),
+          let cgImage = image.cgImage else { return }
+
+    // Force decode
+    let context = CGContext(
+        data: nil,
+        width: cgImage.width,
+        height: cgImage.height,
+        bitsPerComponent: 8,
+        bytesPerRow: 0,
+        space: CGColorSpaceCreateDeviceRGB(),
+        bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue
+    )
+    context?.draw(cgImage, in: CGRect(x: 0, y: 0, width: cgImage.width, height: cgImage.height))
+
+    DispatchQueue.main.async {
+        self.imageView.image = image
+    }
+}
+```
+
+For list views, use **Kingfisher** or **SDWebImage** - they handle caching and background decoding.
+
+### 2. Layout Performance
+
+Auto Layout constraints are recalculated on every frame. Optimize by:
+
+```swift
+// Cache layout calculations
+class MenuCell: UITableViewCell {
+    private var cachedHeight: CGFloat?
+
+    override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
+        if let cached = cachedHeight {
+            return CGSize(width: targetSize.width, height: cached)
+        }
+        let size = super.systemLayoutSizeFitting(targetSize)
+        cachedHeight = size.height
+        return size
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cachedHeight = nil
+    }
+}
+```
+
+Or switch to manual layout for complex cells:
+
+```swift
+override func layoutSubviews() {
+    super.layoutSubviews()
+
+    // Manual frames - calculated once
+    let padding: CGFloat = 16
+    let imageSize: CGFloat = 80
+
+    imageView.frame = CGRect(x: padding, y: padding, width: imageSize, height: imageSize)
+    titleLabel.frame = CGRect(
+        x: imageSize + padding * 2,
+        y: padding,
+        width: bounds.width - imageSize - padding * 3,
+        height: 24
+    )
+}
+```
+
+### 3. Offscreen Rendering
+
+Shadows and corner radii cause offscreen rendering. Fix with:
+
+```swift
+// ❌ Bad - forces offscreen render
+view.layer.shadowColor = UIColor.black.cgColor
+view.layer.shadowOffset = CGSize(width: 0, height: 2)
+view.layer.shadowRadius = 4
+view.layer.shadowOpacity = 0.3
+
+// ✅ Good - rasterize the shadow
+view.layer.shadowPath = UIBezierPath(roundedRect: view.bounds, cornerRadius: 12).cgPath
+view.layer.shouldRasterize = true
+view.layer.rasterizationScale = UIScreen.main.scale
+```
+
+## Table View and Collection View Tips
+
+### Prefetching
+
+```swift
+extension MenuViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            let menuItem = items[indexPath.row]
+            // Start loading images before cells appear
+            ImagePrefetcher.shared.prefetch(url: menuItem.imageURL)
+        }
+    }
+}
+```
+
+### Cell Registration
+
+```swift
+// Use modern cell registration (iOS 14+)
+let cellRegistration = UICollectionView.CellRegistration<MenuCell, MenuItem> { cell, indexPath, item in
+    cell.configure(with: item)
+}
+
+dataSource = UICollectionViewDiffableDataSource<Section, MenuItem>(collectionView: collectionView) {
+    collectionView, indexPath, item in
+    collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+}
+```
+
+## Results at Pop Meals
+
+After applying these optimizations:
+
+| Metric           | Before | After |
+| ---------------- | ------ | ----- |
+| Average FPS      | 42     | 59.8  |
+| Worst-case FPS   | 24     | 52    |
+| Scroll jank rate | 8%     | 0.3%  |
+| Memory usage     | 210MB  | 165MB |
+
+## Quick Wins Checklist
+
+- [ ] Profile before optimizing
+- [ ] Decode images off main thread
+- [ ] Use `shadowPath` for shadows
+- [ ] Enable `shouldRasterize` for static views
+- [ ] Implement prefetching for lists
+- [ ] Cache layout calculations
+- [ ] Use `CADisplayLink` to detect dropped frames
+
+---
+
+_Building a high-performance iOS app? I'd love to hear about your challenges. [Connect with me on LinkedIn](https://linkedin.com/in/harshal-ios-swift-react-native)!_

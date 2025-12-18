@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import { AppStoreIcon, PlayStoreIcon } from './Icons'
 import { PROJECTS } from '../constants'
+import SEO from './SEO'
 
 const ProjectDetails = () => {
   const { id } = useParams()
@@ -44,7 +45,12 @@ const ProjectDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background pt-24 pb-20">
+    <div className="min-h-screen bg-background pt-32 pb-20">
+      <SEO
+        title={project.title}
+        description={project.description}
+        image={project.image}
+      />
       <div className="container mx-auto px-6">
         {/* Back Button */}
         <button
