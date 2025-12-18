@@ -1,0 +1,134 @@
+---
+title: "Shopify's React Native Journey: 5 Years and Billions in Revenue"
+description: "The Big Bet That Paid Off - how Shopify went all-in on React Native and what it means for your mobile strategy"
+date: "2024-11-15"
+tags: ["react-native", "mobile", "case-study", "shopify"]
+published: true
+image: "/blog/shopify-rn.png"
+author: "Harshal Bhavsar"
+readingTime: "3 min read"
+---
+
+# Shopify's React Native Journey: 5 Years and Billions in Revenue
+
+Remember the early days of React Native? The debates about whether it was truly "Native," the questions about speed, the feeling that it was just "good enough" rather than truly great? Five years ago, Shopify looked at all that uncertainty and made a bold choice: React Native was the future of their mobile apps.
+
+**Spoiler alert**: that bet paid off big time. We're not just talking about a promising future—we're talking about a massively successful reality that changed how Shopify builds and ships mobile apps.
+
+## Part 1: Why Shopify Went All-In
+
+Think about Shopify before 2020: Every new feature had to be built twice—once for iPhone and once for Android. This wasn't just extra work, it was a bottleneck that drained resources and limited how fast they could innovate.
+
+The dream in 2020 was simple but powerful: **"Write it once"** for huge efficiency gains. Imagine developers easily moving between web, iOS, and Android projects, using their skills across all platforms.
+
+### The Results
+
+Fast forward to today, and reality beat even those big dreams:
+
+| Metric | Result |
+|--------|--------|
+| Code Sharing | 86% |
+| Lines Eliminated | 1.8 million |
+| Screen Load Time | Under 500ms (P75) |
+| Crash-Free Sessions | 99.9%+ |
+
+## Part 2: The Technical Evolution
+
+To understand Shopify's success, you need to know React Native's own story:
+
+```typescript
+// The key milestones
+const reactNativeHistory = {
+  2015: 'Open sourced, Android support added',
+  2017: 'React Fiber - faster rendering',
+  2025: 'New Architecture - full JSI, Fabric, TurboModules'
+}
+```
+
+Shopify's migration plan was smart. Instead of a risky all-at-once rewrite, they let individual teams choose when and how to move their apps. This step-by-step approach let them keep shipping features while slowly adopting the new tech.
+
+## Part 3: Surprising Lessons Learned
+
+### Hot Reloading is Magic
+
+Seeing your code changes instantly, without waiting for long builds, is a game-changer for productivity. Native development often can't match this speed.
+
+### TypeScript: The Bridge Builder
+
+TypeScript is more than just types; it's a bridge between web and mobile worlds:
+
+```typescript
+// Shared types across platforms
+interface Product {
+  id: string
+  title: string
+  price: number
+  variants: Variant[]
+}
+
+// Works in web, iOS, and Android
+function formatPrice(product: Product): string {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  }).format(product.price)
+}
+```
+
+### Native Experts Are Still Essential
+
+Don't think React Native means you don't need iOS and Android specialists anymore. They're crucial for:
+- Performance optimization
+- Phone-specific features (3D scanning, AI, watch apps)
+- Complex builds
+- React Native updates
+
+### It's "Native AND React Native," Not "OR"
+
+The best approach isn't 100% React Native. Use native for what it's best at:
+- Cutting-edge hardware features
+- Background tasks
+- Memory-heavy operations
+
+And React Native for everything else.
+
+## Part 4: The Challenges (Real Talk)
+
+No tech revolution happens without problems:
+
+1. **Debugging**: Can be less reliable than native tools
+2. **Constant Updates**: Keeping up with fast changes takes dedicated work
+3. **Dependency Management**: Too many third-party libraries create maintenance headaches
+4. **The "Last 20%" Problem**: Getting pixel-perfect native feel can be harder
+
+Shopify even hit "App Hang" problems from conflicts between old native code and new React Native setup—showing how complex large migrations can be.
+
+## Part 5: The Future
+
+React Native's future looks bright with the New Architecture:
+
+```typescript
+// New Architecture components
+const newArch = {
+  JSI: 'Direct, instant JS-to-native communication',
+  Fabric: 'Smoother UIs, concurrent rendering',
+  TurboModules: 'On-demand native module loading',
+  Codegen: 'Auto-generated type-safe bridges'
+}
+```
+
+Shopify isn't just using React Native—they're leading the community:
+- Contributing code directly to React Native
+- Serving as co-release captains for React Native releases
+- Sponsoring React Native Skia, Reanimated, FlashList
+- Open-sourcing tools like Restyle and Tophat
+
+## Conclusion
+
+Shopify's story shows that React Native, when used strategically by skilled teams, is an incredibly powerful tool for scaling mobile development.
+
+The key isn't picking sides—"native" or "React Native"—but **smart integration** using the strengths of both approaches.
+
+---
+
+*This post was originally published on [LinkedIn](https://www.linkedin.com/pulse/5-years-billions-revenue-shopifys-epic-react-native-journey-bhavsar-z9qnf).*

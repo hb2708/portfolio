@@ -1,0 +1,237 @@
+---
+title: "Building a Mobile Design System at Scale"
+description: "Lessons from creating a design system used by 35+ engineers at MoneyLion"
+date: "2024-10-20"
+tags: ["design-systems", "react-native", "mobile", "architecture"]
+published: true
+image: "/blog/design-system.png"
+author: "Harshal Bhavsar"
+readingTime: "3 min read"
+---
+
+# Building a Mobile Design System at Scale
+
+At MoneyLion, I led the creation of a mobile design system now used by 35+ engineers across iOS and Android. Here's what I learned about building design systems that actually get adopted.
+
+## Why Build a Design System?
+
+Before our design system, every new feature meant:
+- Designers recreating components from scratch
+- Developers implementing the same button 5 different ways
+- Inconsistent spacing, colors, and typography
+- Accessibility issues popping up randomly
+
+After implementing our design system:
+- **60% faster** feature development
+- **Zero** design-dev misalignment tickets
+- **100%** accessibility compliance
+
+## The Architecture
+
+We built our system using a token-based approach:
+
+```typescript
+// tokens/colors.ts
+export const colors = {
+  // Semantic tokens
+  primary: {
+    default: '#0052FF',
+    hover: '#0047E6',
+    pressed: '#003DB8',
+    disabled: '#B3C7FF',
+  },
+  
+  // Contextual tokens
+  background: {
+    primary: '#FFFFFF',
+    secondary: '#F5F7FA',
+    tertiary: '#E8ECF2',
+  },
+  
+  // Status tokens
+  success: '#00C853',
+  warning: '#FFB300',
+  error: '#FF3D00',
+} as const
+```
+
+### Why Tokens?
+
+Tokens create a layer of abstraction between design decisions and implementation:
+
+```
+Design Intent → Token → Component → Screen
+              ↓
+"Primary Action" → colors.primary.default → Button → Checkout
+```
+
+When we rebranded (yes, it happens), we changed **5 token values** and the entire app updated automatically.
+
+## Component Structure
+
+Each component follows a strict structure:
+
+```tsx
+// components/Button/Button.tsx
+import { colors, spacing, typography } from '@monelion/tokens'
+
+interface ButtonProps {
+  variant: 'primary' | 'secondary' | 'ghost'
+  size: 'sm' | 'md' | 'lg'
+  loading?: boolean
+  disabled?: boolean
+  onPress: () => void
+  children: React.ReactNode
+}
+
+export const Button: React.FC<ButtonProps> = ({
+  variant = 'primary',
+  size = 'md',
+  loading = false,
+  disabled = false,
+  onPress,
+  children,
+}) => {
+  const styles = useButtonStyles(variant, size, disabled)
+  
+  return (
+    <Pressable
+      style={styles.container}
+      onPress={onPress}
+      disabled={disabled || loading}
+      accessibilityRole="button"
+      accessibilityState={{ disabled }}
+    >
+      {loading ? (
+        <ActivityIndicator color={styles.textColor} />
+      ) : (
+        <Text style={styles.text}>{children}</Text>
+      )}
+    </Pressable>
+  )
+}
+```
+
+### Key Principles
+
+1. **Prop-driven variants** - No custom styling escape hatches
+2. **Accessibility built-in** - Every interactive component has proper roles
+3. **Loading states** - Async operations handled consistently
+4. **TypeScript strict** - Impossible to use wrong variant names
+
+## Documentation That Works
+
+We use Storybook for React Native with MDX documentation:
+
+```tsx
+// Button.stories.tsx
+import { Button } from './Button'
+
+export default {
+  title: 'Components/Button',
+  component: Button,
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'ghost'],
+    },
+  },
+}
+
+export const Primary = {
+  args: {
+    variant: 'primary',
+    children: 'Click me',
+  },
+}
+
+export const Loading = {
+  args: {
+    variant: 'primary',
+    loading: true,
+    children: 'Loading...',
+  },
+}
+```
+
+Each component includes:
+- Visual examples
+- Prop documentation
+- Accessibility notes
+- Do's and don'ts
+- Code snippets
+
+## Adoption Strategy
+
+A design system nobody uses is worthless. Here's how we drove adoption:
+
+### 1. Early Wins
+We started with the highest-impact components:
+- Button (used 500+ times)
+- Input (200+ times)
+- Card (150+ times)
+
+### 2. Migration Tools
+
+Built codemods to automate migration:
+
+```bash
+# Automatically update old button usage
+npx jscodeshift -t transforms/button-migration.ts src/
+```
+
+### 3. Lint Rules
+
+Custom ESLint rules prevented new violations:
+
+```typescript
+// eslint-plugin-design-system
+module.exports = {
+  rules: {
+    'no-inline-colors': {
+      create(context) {
+        return {
+          Literal(node) {
+            if (isHexColor(node.value)) {
+              context.report({
+                node,
+                message: 'Use design tokens instead of hex colors',
+              })
+            }
+          },
+        }
+      },
+    },
+  },
+}
+```
+
+### 4. Weekly Audits
+
+Dashboard showing:
+- Token usage vs hardcoded values
+- Component coverage
+- Accessibility score
+
+## Results
+
+After 18 months:
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Unique button styles | 23 | 3 |
+| Design-dev tickets | 15/sprint | 0 |
+| New feature time | 3 weeks | 1 week |
+| Accessibility issues | Monthly | None |
+
+## Lessons Learned
+
+1. **Start simple** - 5 well-adopted components beat 50 unused ones
+2. **Make it convenient** - If using the system is harder than not using it, people won't use it
+3. **Document obsessively** - Every "obvious" decision will be questioned
+4. **Iterate based on usage** - Watch how developers actually use components
+5. **Celebrate adoption** - Share wins, thank early adopters
+
+---
+
+*Building a design system? I'd love to hear about your experience. [Connect on LinkedIn](https://linkedin.com/in/harshal-ios-swift-react-native)!*

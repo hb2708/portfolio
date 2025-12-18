@@ -4,24 +4,9 @@ import popMeals from '../assets/pop_meals_customer.webp'
 import popMealsRider from '../assets/pop_meals_rider.webp'
 import moneylion from '../assets/moneylion.webp'
 
-export interface Project {
-  id: string
-  title: string
-  subtitle?: string
-  description: string
-  longDescription: string
-  challenges?: string[]
-  solutions?: string[]
-  features?: string[]
-  tech: string[]
-  image: string
-  links?: {
-    ios?: string
-    android?: string
-    web?: string
-  }
-  link?: string
-}
+// Re-export for backwards compatibility
+export type { Project } from '../types/project'
+import type { Project } from '../types/project'
 
 export const NAV_LINKS = [
   { name: 'About', href: '#about' },
