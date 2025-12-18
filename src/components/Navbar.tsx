@@ -75,9 +75,10 @@ const Navbar = () => {
           className={`
             relative flex items-center justify-between w-full max-w-5xl px-6 py-3 
             rounded-full transition-all duration-300
-            ${hasScrolled || isMobileMenuOpen
-              ? 'bg-black/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
-              : 'bg-transparent border border-transparent'
+            ${
+              hasScrolled || isMobileMenuOpen
+                ? 'bg-black/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
+                : 'bg-transparent border border-transparent'
             }
           `}
         >

@@ -56,7 +56,6 @@ export const XIcon = ({ className }: IconProps) => (
   </svg>
 )
 
-
 // About Icons
 export const DayOneIcon = ({ className }: IconProps) => (
   <Rocket className={className} />

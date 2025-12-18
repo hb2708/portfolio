@@ -1,12 +1,12 @@
 ---
-title: "Building a Mobile Design System at Scale"
-description: "Lessons from creating a design system used by 35+ engineers at MoneyLion"
-date: "2024-10-20"
-tags: ["design-systems", "react-native", "mobile", "architecture"]
+title: 'Building a Mobile Design System at Scale'
+description: 'Lessons from creating a design system used by 35+ engineers at MoneyLion'
+date: '2024-10-20'
+tags: ['design-systems', 'react-native', 'mobile', 'architecture']
 published: true
-image: "/blog/design-system.png"
-author: "Harshal Bhavsar"
-readingTime: "3 min read"
+image: '/blog/design-system.png'
+author: 'Harshal Bhavsar'
+readingTime: '3 min read'
 ---
 
 # Building a Mobile Design System at Scale
@@ -16,12 +16,14 @@ At MoneyLion, I led the creation of a mobile design system now used by 35+ engin
 ## Why Build a Design System?
 
 Before our design system, every new feature meant:
+
 - Designers recreating components from scratch
 - Developers implementing the same button 5 different ways
 - Inconsistent spacing, colors, and typography
 - Accessibility issues popping up randomly
 
 After implementing our design system:
+
 - **60% faster** feature development
 - **Zero** design-dev misalignment tickets
 - **100%** accessibility compliance
@@ -40,14 +42,14 @@ export const colors = {
     pressed: '#003DB8',
     disabled: '#B3C7FF',
   },
-  
+
   // Contextual tokens
   background: {
     primary: '#FFFFFF',
     secondary: '#F5F7FA',
     tertiary: '#E8ECF2',
   },
-  
+
   // Status tokens
   success: '#00C853',
   warning: '#FFB300',
@@ -93,7 +95,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
 }) => {
   const styles = useButtonStyles(variant, size, disabled)
-  
+
   return (
     <Pressable
       style={styles.container}
@@ -155,6 +157,7 @@ export const Loading = {
 ```
 
 Each component includes:
+
 - Visual examples
 - Prop documentation
 - Accessibility notes
@@ -166,7 +169,9 @@ Each component includes:
 A design system nobody uses is worthless. Here's how we drove adoption:
 
 ### 1. Early Wins
+
 We started with the highest-impact components:
+
 - Button (used 500+ times)
 - Input (200+ times)
 - Card (150+ times)
@@ -209,6 +214,7 @@ module.exports = {
 ### 4. Weekly Audits
 
 Dashboard showing:
+
 - Token usage vs hardcoded values
 - Component coverage
 - Accessibility score
@@ -217,12 +223,12 @@ Dashboard showing:
 
 After 18 months:
 
-| Metric | Before | After |
-|--------|--------|-------|
-| Unique button styles | 23 | 3 |
-| Design-dev tickets | 15/sprint | 0 |
-| New feature time | 3 weeks | 1 week |
-| Accessibility issues | Monthly | None |
+| Metric               | Before    | After  |
+| -------------------- | --------- | ------ |
+| Unique button styles | 23        | 3      |
+| Design-dev tickets   | 15/sprint | 0      |
+| New feature time     | 3 weeks   | 1 week |
+| Accessibility issues | Monthly   | None   |
 
 ## Lessons Learned
 
@@ -234,4 +240,4 @@ After 18 months:
 
 ---
 
-*Building a design system? I'd love to hear about your experience. [Connect on LinkedIn](https://linkedin.com/in/harshal-ios-swift-react-native)!*
+_Building a design system? I'd love to hear about your experience. [Connect on LinkedIn](https://linkedin.com/in/harshal-ios-swift-react-native)!_
