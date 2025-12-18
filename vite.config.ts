@@ -9,7 +9,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
     {
       enforce: 'pre',
@@ -32,7 +32,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
+        manualChunks: isSsrBuild ? undefined : {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           animations: ['framer-motion', 'react-type-animation'],
           icons: ['lucide-react'],
@@ -41,4 +41,7 @@ export default defineConfig({
       },
     },
   },
-})
+  ssr: {
+    noExternal: ['react-helmet-async'],
+  },
+}))
