@@ -1,20 +1,26 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/webp" href="/harshal.webp" />
+    <link rel="apple-touch-icon" href="/harshal.webp" />
+    <link
+      rel="preload"
+      as="image"
+      href="/harshal.webp"
+      imagesrcset="/harshal-mobile.webp 300w, /harshal.webp 500w"
+      imagesizes="(max-width: 768px) 300px, 500px"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harshal Bhavsar | Staff Engineer, iOS & React Native Expert</title>
+    <meta
+      name="description"
+      content="Portfolio of Harshal Bhavsar, a Staff Engineer and Mobile Specialist with 10+ years of experience building scalable apps at MoneyLion, Pop Meals, and more."
+    />
+    <link rel="canonical" href="https://www.gyaan.tech/" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/webp" href="/harshal.webp" />
-  <link rel="apple-touch-icon" href="/harshal.webp" />
-  <link rel="preload" as="image" href="/harshal.webp" imagesrcset="/harshal-mobile.webp 300w, /harshal.webp 500w"
-    imagesizes="(max-width: 768px) 300px, 500px" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harshal Bhavsar | Staff Engineer, iOS & React Native Expert</title>
-  <meta name="description"
-    content="Portfolio of Harshal Bhavsar, a Staff Engineer and Mobile Specialist with 10+ years of experience building scalable apps at MoneyLion, Pop Meals, and more." />
-  <link rel="canonical" href="https://www.gyaan.tech/" />
-
-  <!-- AISEO & Structured Data -->
-  <script type="application/ld+json">
+    <!-- AISEO & Structured Data -->
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
@@ -48,35 +54,43 @@
       }
     </script>
 
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CW9KDWDTWS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-CW9KDWDTWS')
+    </script>
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW9KDWDTWS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      dataLayer.push(arguments)
-    }
-    gtag('js', new Date())
-    gtag('config', 'G-CW9KDWDTWS')
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-    rel="stylesheet" media="print" onload="this.media = 'all'" />
-  <noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-      rel="stylesheet" />
-  </noscript>
-</head>
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+  </head>
 
-<body>
-  <div id="root"><!--app-html--></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
-
+  <body>
+    <div id="root"><!--app-html--></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
