@@ -35,6 +35,8 @@ async function prerender() {
     path.resolve(DIST_DIR, 'server/entry-server.js')
   )
 
+  const pages = []
+
   for (const url of ROUTES) {
     console.log(`\n📸 Rendering ${url}...`)
 
@@ -89,12 +91,63 @@ async function prerender() {
 
       fs.writeFileSync(outputPath, html)
       console.log(`✅ Saved to ${outputPath}`)
+
+      // Collect Metadata for Sitemap/RSS
+      const titleMatch = helmet.title.toString().match(/<title[^>]*>(.*?)<\/title>/)
+      const descMatch = helmet.meta.toString().match(/name="description" content="(.*?)"/)
+      const dateMatch = helmet.meta.toString().match(/property="article:published_time" content="(.*?)"/)
+
+      pages.push({
+        url: `https://www.gyaan.tech${url}`,
+        title: titleMatch ? titleMatch[1] : 'Harshal Bhavsar',
+        description: descMatch ? descMatch[1] : '',
+        date: dateMatch ? dateMatch[1] : new Date().toISOString().split('T')[0]
+      })
+
     } catch (e) {
       console.error(`❌ Failed to render ${url}:`, e)
     }
   }
 
-  // Cleanup server bundle (optional, keeping it for debugging is fine)
+  // Generate Sitemap
+  console.log('\n🗺️ Generating Sitemap...')
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${pages.map(page => `
+  <url>
+    <loc>${page.url}</loc>
+    <lastmod>${page.date}</lastmod>
+    <changefreq>${page.url.includes('/blog/') ? 'monthly' : 'weekly'}</changefreq>
+    <priority>${page.url === 'https://www.gyaan.tech/' ? '1.0' : '0.8'}</priority>
+  </url>`).join('')}
+</urlset>`
+  fs.writeFileSync(path.resolve(DIST_DIR, 'sitemap.xml'), sitemap)
+  console.log('✅ sitemap.xml created')
+
+  // Generate RSS
+  console.log('\n📡 Generating RSS Feed...')
+  const blogPosts = pages.filter(p => p.url.includes('/blog/') && p.url !== 'https://www.gyaan.tech/blog')
+  const rss = `<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Harshal Bhavsar | Engineering Blog</title>
+    <link>https://www.gyaan.tech</link>
+    <description>Thoughts on React Native, iOS, and Engineering Leadership.</description>
+    <language>en-us</language>
+    ${blogPosts.map(post => `
+    <item>
+      <title>${post.title.replace(' | Harshal Bhavsar', '')}</title>
+      <link>${post.url}</link>
+      <description>${post.description}</description>
+      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+      <guid>${post.url}</guid>
+    </item>`).join('')}
+  </channel>
+</rss>`
+  fs.writeFileSync(path.resolve(DIST_DIR, 'rss.xml'), rss)
+  console.log('✅ rss.xml created')
+
+  // Cleanup server bundle (optional)
   // fs.rmSync(path.resolve(DIST_DIR, 'server'), { recursive: true, force: true })
 
   console.log('\n✨ Prerendering complete!')
