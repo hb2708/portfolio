@@ -1,2 +1,2 @@
+pnpm validate-blog
 pnpm lint
-pnpm run build
