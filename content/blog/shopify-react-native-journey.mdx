@@ -4,9 +4,9 @@ description: 'The Big Bet That Paid Off - how Shopify went all-in on React Nativ
 date: '2024-11-15'
 tags: ['react-native', 'mobile', 'case-study', 'shopify']
 published: true
-image: '/blog/shopify-rn.png'
+image: '/blog/shopify-react-native-journey.webp'
 author: 'Harshal Bhavsar'
-readingTime: '3 min read'
+readingTime: '4 min read'
 ---
 
 # Shopify's React Native Journey: 5 Years and Billions in Revenue
@@ -100,14 +100,18 @@ No tech revolution happens without problems:
 
 1. **Debugging**: Can be less reliable than native tools
 2. **Constant Updates**: Keeping up with fast changes takes dedicated work
-3. **Dependency Management**: Too many third-party libraries create maintenance headaches
+3. **Dependency Management**: Too many third-party libraries create maintenance headaches, version conflicts, and security risks. (Shopify handles this with tools like [Dependabot](https://github.com/dependabot) and code scanning.)
 4. **The "Last 20%" Problem**: Getting pixel-perfect native feel can be harder
 
 Shopify even hit "App Hang" problems from conflicts between old native code and new React Native setup—showing how complex large migrations can be.
 
+### The "Not Really Native" Criticism
+
+Some people still say React Native isn't "truly native," especially for super complex or graphics-heavy apps. Shopify admits they saw some slowdowns during the New Architecture transition (some parts took 20% longer to load during the switch), but they fixed those and now deliver world-class performance.
+
 ## Part 5: The Future
 
-React Native's future looks bright with the New Architecture:
+React Native's future looks bright with the [New Architecture](https://reactnative.dev/docs/the-new-architecture/landing-page):
 
 ```typescript
 // New Architecture components
@@ -123,8 +127,9 @@ Shopify isn't just using React Native—they're leading the community:
 
 - Contributing code directly to React Native
 - Serving as co-release captains for React Native releases
-- Sponsoring React Native Skia, Reanimated, FlashList
-- Open-sourcing tools like Restyle and Tophat
+- Sponsoring [React Native Skia](https://shopify.github.io/react-native-skia/), [Reanimated](https://docs.swmansion.com/react-native-reanimated/), [FlashList](https://shopify.github.io/flash-list/)
+- Open-sourcing tools like [FlashList](https://shopify.github.io/flash-list/), [Restyle](https://github.com/Shopify/restyle) and [Tophat](https://github.com/Shopify/tophat)
+- Restarting the React Native Working Group in 2025
 
 ## Conclusion
 
