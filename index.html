@@ -12,12 +12,32 @@
       imagesizes="(max-width: 768px) 300px, 500px"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fafafa" />
     <title>Harshal Bhavsar | Staff Engineer, iOS & React Native Expert</title>
     <meta
       name="description"
       content="Portfolio of Harshal Bhavsar, a Staff Engineer and Mobile Specialist with 10+ years of experience building scalable apps at MoneyLion, Pop Meals, and more."
     />
     <link rel="canonical" href="https://www.gyaan.tech/" />
+    <script>
+      ;(function () {
+        const theme = localStorage.getItem('theme')
+        const systemDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches
+        const metaThemeColor = document.querySelector(
+          'meta[name="theme-color"]',
+        )
+
+        if (theme === 'dark' || (!theme && systemDark)) {
+          document.documentElement.classList.add('dark')
+          if (metaThemeColor) metaThemeColor.setAttribute('content', '#09090b')
+        } else {
+          document.documentElement.classList.remove('dark')
+          if (metaThemeColor) metaThemeColor.setAttribute('content', '#fafafa')
+        }
+      })()
+    </script>
 
     <!-- AISEO & Structured Data -->
     <script type="application/ld+json">

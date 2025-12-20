@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 :root {
+  color-scheme: light;
   /* Light Mode - Clean, Professional, Accessible */
   --bg: #fafafa;
   /* Zinc 50 - Softer than pure white */
@@ -21,6 +22,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   /* Dark Mode - Premium, Deep, Cyber */
   --bg: #09090b;
   /* Zinc 950 - Rich black */
