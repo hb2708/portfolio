@@ -33,7 +33,7 @@ const Experience = () => {
 
         <div className="relative max-w-5xl mx-auto">
           {/* Timeline Line */}
-          <div className="absolute left-0 md:left-[120px] top-0 bottom-0 w-[1px] bg-white/10">
+          <div className="absolute left-0 md:left-[120px] top-0 bottom-0 w-[1px] bg-text/10">
             <motion.div
               style={{ scaleY, transformOrigin: 'top' }}
               className="absolute top-0 left-0 w-full h-full bg-primary"
@@ -50,7 +50,7 @@ const Experience = () => {
               className="relative mb-16 md:mb-24 pl-8 md:pl-[160px] group"
             >
               {/* Timeline Node */}
-              <div className="absolute left-[-5px] md:left-[115px] top-0 w-[11px] h-[11px] bg-black border border-white/20 rounded-full group-hover:border-primary group-hover:bg-primary transition-colors duration-300"></div>
+              <div className="absolute left-[-5px] md:left-[115px] top-0 w-[11px] h-[11px] bg-background border border-text/20 rounded-full group-hover:border-primary group-hover:bg-primary transition-colors duration-300"></div>
 
               {/* Date - Desktop */}
               <div className="hidden md:block absolute left-0 top-[-5px] w-[100px] text-right">

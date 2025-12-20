@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Check, Copy } from 'lucide-react'
 import { trackCodeCopy } from '../../utils/analytics'
+import { useTheme } from '../../context/ThemeContext'
 
 interface CodeBlockProps {
   children: string
@@ -12,6 +13,7 @@ const CodeBlock = ({ children, className, filename }: CodeBlockProps) => {
   const [copied, setCopied] = useState(false)
   const [highlightedCode, setHighlightedCode] = useState<string>('')
   const codeRef = useRef<HTMLDivElement>(null)
+  const { resolvedTheme } = useTheme()
 
   // Extract language from className (e.g., "language-typescript" -> "typescript")
   const language = className?.replace('language-', '') || 'text'
@@ -20,8 +22,11 @@ const CodeBlock = ({ children, className, filename }: CodeBlockProps) => {
     const loadShiki = async () => {
       try {
         const { createHighlighter } = await import('shiki')
+        const shikiTheme =
+          resolvedTheme === 'dark' ? 'github-dark' : 'github-light'
+
         const highlighter = await createHighlighter({
-          themes: ['github-dark'],
+          themes: [shikiTheme],
           langs: [
             'typescript',
             'javascript',
@@ -38,7 +43,7 @@ const CodeBlock = ({ children, className, filename }: CodeBlockProps) => {
 
         const html = highlighter.codeToHtml(children.trim(), {
           lang: language,
-          theme: 'github-dark',
+          theme: shikiTheme,
         })
         setHighlightedCode(html)
       } catch (error) {
@@ -51,7 +56,7 @@ const CodeBlock = ({ children, className, filename }: CodeBlockProps) => {
     }
 
     loadShiki()
-  }, [children, language])
+  }, [children, language, resolvedTheme])
 
   const handleCopy = async () => {
     try {
@@ -65,14 +70,14 @@ const CodeBlock = ({ children, className, filename }: CodeBlockProps) => {
   }
 
   return (
-    <div className="relative group my-6 rounded-xl overflow-hidden border border-white/10 bg-[#0d1117]">
+    <div className="relative group my-6 rounded-xl overflow-hidden border border-text/10 bg-surface">
       {/* Header with filename and language */}
-      <div className="flex items-center justify-between px-4 py-2 bg-[#161b22] border-b border-white/10">
+      <div className="flex items-center justify-between px-4 py-2 bg-text/5 border-b border-text/10">
         <div className="flex items-center gap-3">
           <div className="flex gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-            <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-            <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
+            <span className="w-3 h-3 rounded-full bg-red-500/50" />
+            <span className="w-3 h-3 rounded-full bg-yellow-500/50" />
+            <span className="w-3 h-3 rounded-full bg-green-500/50" />
           </div>
           {filename && (
             <span className="text-xs font-mono text-muted">{filename}</span>
@@ -84,7 +89,7 @@ const CodeBlock = ({ children, className, filename }: CodeBlockProps) => {
           </span>
           <button
             onClick={handleCopy}
-            className="flex items-center gap-1.5 px-2 py-1 text-xs rounded-md bg-white/5 hover:bg-white/10 transition-colors text-muted hover:text-text"
+            className="flex items-center gap-1.5 px-2 py-1 text-xs rounded-md bg-text/5 hover:bg-text/10 transition-colors text-muted hover:text-text"
             aria-label="Copy code"
           >
             {copied ? (

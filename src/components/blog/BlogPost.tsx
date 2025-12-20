@@ -198,7 +198,7 @@ const BlogPost = () => {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.15 }}
-                className="mb-8 rounded-xl overflow-hidden border border-white/10 aspect-[2/1]"
+                className="mb-8 rounded-xl overflow-hidden border border-text/10 aspect-[2/1]"
               >
                 <img
                   src={post.image}
@@ -209,7 +209,7 @@ const BlogPost = () => {
             )}
 
             {/* Meta and Share */}
-            <div className="flex items-center justify-between flex-wrap gap-4 pb-8 border-b border-white/10">
+            <div className="flex items-center justify-between flex-wrap gap-4 pb-8 border-b border-text/10">
               <div className="flex items-center gap-6 text-sm text-muted">
                 <span className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
@@ -252,7 +252,7 @@ const BlogPost = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="max-w-4xl prose prose-invert"
+              className="max-w-4xl prose dark:prose-invert prose-zinc"
             >
               <MDXComponentsProvider>
                 <Content />
@@ -275,7 +275,7 @@ const BlogPost = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="max-w-4xl mx-auto mt-16 pt-8 border-t border-white/10"
+            className="max-w-4xl mx-auto mt-16 pt-8 border-t border-text/10"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {prevPost && (

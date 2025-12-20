@@ -80,7 +80,7 @@ const BlogList = () => {
               placeholder="Search articles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-surface border border-white/10 rounded-xl text-text placeholder:text-muted focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+              className="w-full pl-12 pr-4 py-3 bg-surface border border-text/10 rounded-xl text-text placeholder:text-muted focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
             />
           </div>
 
@@ -92,7 +92,7 @@ const BlogList = () => {
               className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                 !selectedTag
                   ? 'bg-primary text-background'
-                  : 'bg-surface text-muted hover:text-text border border-white/10'
+                  : 'bg-surface text-muted hover:text-text border border-text/10'
               }`}
             >
               All

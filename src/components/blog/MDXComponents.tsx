@@ -109,7 +109,7 @@ const components = {
   ),
 
   // Horizontal rules
-  hr: () => <hr className="border-white/10 my-12" />,
+  hr: () => <hr className="border-text/10 my-12" />,
 
   // Tables
   table: ({ children }: { children: React.ReactNode }) => (
@@ -121,12 +121,12 @@ const components = {
     <thead className="bg-surface">{children}</thead>
   ),
   th: ({ children }: { children: React.ReactNode }) => (
-    <th className="px-4 py-3 text-left text-sm font-bold text-text border border-white/10">
+    <th className="px-4 py-3 text-left text-sm font-bold text-text border border-text/10">
       {children}
     </th>
   ),
   td: ({ children }: { children: React.ReactNode }) => (
-    <td className="px-4 py-3 text-sm text-muted border border-white/10">
+    <td className="px-4 py-3 text-sm text-muted border border-text/10">
       {children}
     </td>
   ),
@@ -145,7 +145,7 @@ const components = {
       <img
         src={src}
         alt={alt}
-        className="w-full rounded-xl border border-white/10"
+        className="w-full rounded-xl border border-text/10"
         loading="lazy"
       />
       {alt && (

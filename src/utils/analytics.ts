@@ -43,12 +43,14 @@ export type AnalyticsEvent =
   | 'PROJECT_LINK_CLICK'
   | 'NAV_CLICK'
   | 'SECTION_VIEW'
+  | 'THEME_TOGGLE'
 
 export interface AnalyticsEventData {
   action?: string
   label?: string
   value?: string | number
   category?: string
+  theme?: string
 }
 
 /**
@@ -63,6 +65,7 @@ export const trackEvent = (
     event_label: data?.label,
     event_action: data?.action,
     value: data?.value,
+    theme: data?.theme,
   })
 }
 

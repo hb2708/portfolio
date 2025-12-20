@@ -23,7 +23,7 @@ const Hero = () => {
           <div className="flex-1 text-center lg:text-left animate-slide-in-left">
             <h1 className="text-5xl md:text-7xl font-bold text-text leading-tight tracking-tighter mb-6 font-display">
               {HERO_CONTENT.mainHeading} <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-text">
                 <Suspense fallback={<span>BUILD WORLD-CLASS TEAMS</span>}>
                   <TypeAnimation
                     sequence={HERO_CONTENT.rotatingText}
@@ -41,7 +41,7 @@ const Hero = () => {
                 {HERO_CONTENT.subHeading.connector || '&'}
               </span>{' '}
               {HERO_CONTENT.subHeading.second}
-              <span className="mx-4 text-white/20">|</span>
+              <span className="mx-4 text-text/20">|</span>
               {HERO_CONTENT.subHeading.experience}
             </div>
 
@@ -62,7 +62,7 @@ const Hero = () => {
                     label: 'Hero Section',
                   })
                 }
-                className="px-8 py-4 bg-primary text-background font-bold text-lg hover:bg-white transition-colors uppercase tracking-wider"
+                className="px-8 py-4 bg-primary text-background font-bold text-lg hover:bg-text hover:text-background transition-colors uppercase tracking-wider"
               >
                 {HERO_CONTENT.buttons.primary}
               </a>
@@ -74,7 +74,7 @@ const Hero = () => {
                     label: 'Hero Section',
                   })
                 }
-                className="px-8 py-4 border border-white/20 text-text font-medium text-lg hover:bg-white/5 transition-colors uppercase tracking-wider"
+                className="px-8 py-4 border border-text/20 text-text font-medium text-lg hover:bg-text/5 transition-colors uppercase tracking-wider"
               >
                 {HERO_CONTENT.buttons.secondary}
               </a>
@@ -92,7 +92,7 @@ const Hero = () => {
                     label: 'Hero Section',
                   })
                 }
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-text/5 border border-text/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
               >
                 <Github className="w-6 h-6" />
               </a>
@@ -107,7 +107,7 @@ const Hero = () => {
                     label: 'Hero Section',
                   })
                 }
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-text/5 border border-text/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -122,7 +122,7 @@ const Hero = () => {
                     label: 'Hero Section',
                   })
                 }
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-text/5 border border-text/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
               >
                 <XIcon className="w-5 h-5" />
               </a>
@@ -135,7 +135,7 @@ const Hero = () => {
                     label: 'Hero Section',
                   })
                 }
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-text/5 border border-text/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
               >
                 <Mail className="w-6 h-6" />
               </a>
@@ -146,7 +146,7 @@ const Hero = () => {
           <div className="relative animate-fade-in">
             <div className="relative w-72 h-72 md:w-[500px] md:h-[500px] grayscale hover:grayscale-0 transition-all duration-700 ease-out">
               {/* Tech Borders */}
-              <div className="absolute inset-0 border border-white/10"></div>
+              <div className="absolute inset-0 border border-text/10"></div>
               <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary"></div>
               <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-primary"></div>
 
@@ -174,7 +174,7 @@ const Hero = () => {
         </div>
 
         {/* Statistics Ribbon - Tech Style */}
-        <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-12 animate-slide-in-up [animation-delay:200ms]">
+        <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-text/10 pt-12 animate-slide-in-up [animation-delay:200ms]">
           {HERO_CONTENT.stats.map((stat, index) => (
             <StatItem key={index} number={stat.number} label={stat.label} />
           ))}
@@ -199,7 +199,7 @@ interface StatItemProps {
 
 const StatItem = memo(({ number, label, context }: StatItemProps) => (
   <div className="text-center group relative">
-    <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-display tracking-tighter">
+    <div className="text-4xl md:text-5xl font-bold text-text mb-2 font-display tracking-tighter">
       {number}
     </div>
     <div className="text-xs text-primary font-mono uppercase tracking-widest">
@@ -208,7 +208,7 @@ const StatItem = memo(({ number, label, context }: StatItemProps) => (
 
     {/* Tooltip on hover */}
     {context && (
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-4 px-4 py-2 bg-black border border-primary/20 text-xs text-muted whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-mono">
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-4 px-4 py-2 bg-surface border border-primary/20 text-xs text-muted whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-mono shadow-xl">
         {context}
       </div>
     )}

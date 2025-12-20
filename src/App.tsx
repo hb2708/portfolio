@@ -38,7 +38,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-text font-sans selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-text font-sans selection:bg-primary/30 transition-colors duration-300">
       <ScrollToTop />
       <a
         href="#main-content"

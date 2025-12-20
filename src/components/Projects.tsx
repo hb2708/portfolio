@@ -59,12 +59,12 @@ const Projects = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className={`group relative bg-surface border border-white/5 hover:border-primary/30 transition-all duration-300 overflow-hidden flex flex-col rounded-xl ${
+              className={`group relative bg-surface border border-text/5 hover:border-primary/30 transition-all duration-300 overflow-hidden flex flex-col rounded-xl ${
                 index === 0 || index === 3 ? 'md:col-span-2' : ''
               }`}
             >
               {/* Tech Header */}
-              <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center z-20 bg-gradient-to-b from-black/80 to-transparent">
+              <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center z-20 bg-gradient-to-b from-black/60 to-transparent">
                 <span className="font-mono text-xs text-primary/80">
                   0{index + 1}
                 </span>
@@ -76,7 +76,7 @@ const Projects = () => {
               </div>
 
               {/* Image Container */}
-              <div className="relative h-64 md:h-80 overflow-hidden bg-black/50">
+              <div className="relative h-64 md:h-80 overflow-hidden bg-surface/50">
                 <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"></div>
                 <img
                   src={project.image}
@@ -86,7 +86,7 @@ const Projects = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 md:p-8 flex flex-col flex-grow border-t border-white/5 bg-surface relative">
+              <div className="p-6 md:p-8 flex flex-col flex-grow border-t border-text/5 bg-surface relative">
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
 
                 <h3 className="text-2xl md:text-3xl font-bold text-text mb-3 font-display tracking-tight group-hover:text-primary transition-colors">
@@ -127,7 +127,7 @@ const Projects = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`View ${project.title} on App Store`}
-                            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
+                            className="flex items-center justify-center w-10 h-10 rounded-full bg-text/5 border border-text/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
                           >
                             <AppStoreIcon className="w-5 h-5" />
                           </a>
@@ -138,7 +138,7 @@ const Projects = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`View ${project.title} on Google Play Store`}
-                            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
+                            className="flex items-center justify-center w-10 h-10 rounded-full bg-text/5 border border-text/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
                           >
                             <PlayStoreIcon className="w-5 h-5" />
                           </a>
@@ -149,7 +149,7 @@ const Projects = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`View ${project.title} website`}
-                            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
+                            className="flex items-center justify-center w-10 h-10 rounded-full bg-text/5 border border-text/10 text-muted hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
                           >
                             <Globe className="w-5 h-5" />
                           </a>

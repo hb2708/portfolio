@@ -43,7 +43,7 @@ const Skills = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-surface p-6 rounded-xl border border-white/5 hover:border-primary/50 transition-all duration-300 group"
+                className="bg-surface p-6 rounded-xl border border-text/5 hover:border-primary/50 transition-all duration-300 group"
               >
                 {/* Icon and Header */}
                 <div className="flex items-start justify-between mb-4">
@@ -100,7 +100,7 @@ const Skills = () => {
             {Object.entries(OTHER_SKILLS).map(([category, skills], index) => (
               <div
                 key={index}
-                className="bg-surface/50 p-4 rounded-lg border border-white/5"
+                className="bg-surface/50 p-4 rounded-lg border border-text/5"
               >
                 <h4 className="text-sm font-semibold text-text mb-3">
                   {category}

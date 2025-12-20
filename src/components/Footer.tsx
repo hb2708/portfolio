@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="bg-background border-t border-white/10 py-20"
+      className="bg-background border-t border-text/10 py-20"
     >
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
@@ -91,7 +91,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="pt-8 border-t border-white/5 text-sm text-muted/60">
+          <div className="pt-8 border-t border-text/5 text-sm text-muted/60">
             <p className="mb-4">{FOOTER_CONTENT.copyright}</p>
             <div className="flex flex-wrap gap-6 justify-center">
               <a

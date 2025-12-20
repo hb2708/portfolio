@@ -19,7 +19,7 @@ const BlogCard = ({ post, index }: BlogCardProps) => {
     >
       <Link
         to={`/blog/${post.slug}`}
-        className="group flex flex-col h-full bg-surface rounded-xl border border-white/5 hover:border-primary/30 hover:bg-surface/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 overflow-hidden"
+        className="group flex flex-col h-full bg-surface rounded-xl border border-text/5 hover:border-primary/30 hover:bg-surface/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 overflow-hidden"
       >
         {/* Thumbnail */}
         {post.image && (
@@ -57,7 +57,7 @@ const BlogCard = ({ post, index }: BlogCardProps) => {
           </p>
 
           {/* Meta */}
-          <div className="flex items-center justify-between pt-4 border-t border-white/5">
+          <div className="flex items-center justify-between pt-4 border-t border-text/5">
             <div className="flex items-center gap-4 text-sm text-muted">
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" />

@@ -72,7 +72,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full md:w-1/2 bg-surface p-8 rounded-2xl border border-white/5 relative overflow-hidden"
+            className="w-full md:w-1/2 bg-surface p-8 rounded-2xl border border-text/5 relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
 
@@ -109,7 +109,7 @@ const About = () => {
 
           {/* Enhanced bullet points with icons */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex flex-col items-start gap-4 p-6 bg-surface rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+            <div className="flex flex-col items-start gap-4 p-6 bg-surface rounded-xl border border-text/5 hover:border-primary/30 transition-all hover:-translate-y-1">
               <div className="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                 <PsychologicalSafetyIcon className="w-6 h-6" />
               </div>
@@ -123,7 +123,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-start gap-4 p-6 bg-surface rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+            <div className="flex flex-col items-start gap-4 p-6 bg-surface rounded-xl border border-text/5 hover:border-primary/30 transition-all hover:-translate-y-1">
               <div className="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                 <AutomationIcon className="w-6 h-6" />
               </div>
@@ -137,7 +137,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-start gap-4 p-6 bg-surface rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-1">
+            <div className="flex flex-col items-start gap-4 p-6 bg-surface rounded-xl border border-text/5 hover:border-primary/30 transition-all hover:-translate-y-1">
               <div className="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                 <ScalableIcon className="w-6 h-6" />
               </div>
@@ -176,7 +176,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="bg-surface p-8 rounded-xl border border-white/5 hover:border-primary/30 transition-all hover:-translate-y-2 group"
+              className="bg-surface p-8 rounded-xl border border-text/5 hover:border-primary/30 transition-all hover:-translate-y-2 group"
             >
               <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-background transition-all duration-300">
                 <value.icon className="w-6 h-6" />

@@ -5,10 +5,11 @@ import {
   useScroll,
   useMotionValueEvent,
 } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { NAV_LINKS, NAVBAR_CONTENT, SOCIAL_LINKS } from '../constants'
 import { trackEvent } from '../utils/analytics'
+import { useTheme } from '../context/ThemeContext'
 
 // Smart NavLink that handles both routes and anchor links
 const NavLink = ({
@@ -57,6 +58,7 @@ const Navbar = () => {
   const { scrollY } = useScroll()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [hasScrolled, setHasScrolled] = useState(false)
+  const { setTheme, resolvedTheme } = useTheme()
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setHasScrolled(latest > 20)
@@ -65,6 +67,12 @@ const Navbar = () => {
   const handleMobileNavClick = useCallback(() => {
     setIsMobileMenuOpen(false)
   }, [])
+
+  const toggleTheme = () => {
+    const nextTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
+    setTheme(nextTheme)
+    trackEvent('THEME_TOGGLE', { theme: nextTheme })
+  }
 
   return (
     <>
@@ -77,7 +85,7 @@ const Navbar = () => {
             rounded-full transition-all duration-300
             ${
               hasScrolled || isMobileMenuOpen
-                ? 'bg-black/50 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
+                ? 'bg-surface/50 backdrop-blur-md border border-text/10 shadow-[0_8px_32px_rgba(0,0,0,0.1)]'
                 : 'bg-transparent border border-transparent'
             }
           `}
@@ -97,7 +105,7 @@ const Navbar = () => {
               <NavLink
                 key={link.name}
                 href={link.href}
-                className="px-4 py-2 text-sm font-medium text-muted hover:text-primary hover:bg-white/5 rounded-full transition-all uppercase tracking-wide font-mono"
+                className="px-4 py-2 text-sm font-medium text-muted hover:text-primary hover:bg-text/5 rounded-full transition-all uppercase tracking-wide font-mono"
               >
                 {link.name}
               </NavLink>
@@ -105,13 +113,25 @@ const Navbar = () => {
           </div>
 
           {/* CTA / Mobile Toggle */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-text/5 text-text transition-colors"
+              aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {resolvedTheme === 'dark' ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
+            </button>
+
             <a
               href={SOCIAL_LINKS.resume}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackEvent('RESUME_DOWNLOAD', { label: 'Navbar' })}
-              className="hidden md:block px-5 py-2 text-sm font-bold text-background bg-primary hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] rounded-full transition-all duration-300 uppercase tracking-wider font-mono"
+              className="hidden md:block px-5 py-2 text-sm font-bold text-background bg-primary hover:opacity-90 hover:shadow-[0_0_20px_var(--color-primary)] rounded-full transition-all duration-300 uppercase tracking-wider font-mono"
             >
               {NAVBAR_CONTENT.resumeButton}
             </a>
@@ -140,7 +160,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-20 left-4 right-4 z-40 md:hidden bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 overflow-hidden"
+            className="fixed top-20 left-4 right-4 z-40 md:hidden bg-surface/95 backdrop-blur-xl border border-text/10 rounded-2xl shadow-2xl p-6 overflow-hidden"
           >
             <div className="flex flex-col space-y-4">
               {NAV_LINKS.map((link) => (

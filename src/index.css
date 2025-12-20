@@ -1,13 +1,52 @@
 @import 'tailwindcss';
 
+:root {
+  /* Light Mode - Clean, Professional, Accessible */
+  --bg: #fafafa;
+  /* Zinc 50 - Softer than pure white */
+  --surface: #ffffff;
+  /* Pure White - Creates depth against bg */
+  --primary: #4d7c0f;
+  /* Lime 700 - Accessible contrast (>4.5:1) against white */
+  --secondary: #65a30d;
+  /* Lime 600 */
+  --accent: #4d7c0f;
+  /* Matches primary */
+  --text: #18181b;
+  /* Zinc 900 - High contrast */
+  --muted: #52525b;
+  /* Zinc 600 - Readable secondary text */
+  --grid-color: #e4e4e7;
+  /* Zinc 200 */
+}
+
+.dark {
+  /* Dark Mode - Premium, Deep, Cyber */
+  --bg: #09090b;
+  /* Zinc 950 - Rich black */
+  --surface: #18181b;
+  /* Zinc 900 - Distinct card layer */
+  --primary: #bef264;
+  /* Lime 300 - Bright but distinct from background */
+  --secondary: #a3e635;
+  /* Lime 400 */
+  --accent: #bef264;
+  --text: #f4f4f5;
+  /* Zinc 100 - Crisp white text */
+  --muted: #a1a1aa;
+  /* Zinc 400 - Good contrast for secondary text */
+  --grid-color: #27272a;
+  /* Zinc 800 */
+}
+
 @theme {
-  --color-background: #050505;
-  --color-surface: #0a0a0a;
-  --color-primary: #ccff00;
-  --color-secondary: #99cc00;
-  --color-accent: #ccff00;
-  --color-text: #e2e2e2;
-  --color-muted: #a1a1aa;
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
 
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
@@ -74,8 +113,8 @@
   body {
     @apply bg-background text-text font-sans antialiased;
     background-image:
-      linear-gradient(to right, #1a1a1a 1px, transparent 1px),
-      linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
     background-size: 50px 50px;
     background-attachment: fixed;
   }
@@ -90,7 +129,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-surface border border-white/10 rounded-full;
+    @apply bg-surface border border-text/10 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -109,6 +148,6 @@
   h4,
   h5,
   h6 {
-    @apply font-display tracking-tight;
+    @apply font-display tracking-tight text-text;
   }
 }
